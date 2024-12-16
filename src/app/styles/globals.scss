@@ -9,19 +9,24 @@
     --background: #ffffff;
     --foreground: #171717;
 
-    --primary: #246beb;
-    --secondary: #00ff00;
+    --Green__primary: #2aea65;
+    --Green__800: #215531;
+    --Green__900: #0e2a16;
+    --Green__700: #307d47;
+    --Green__600: #40aa61;
+
+    --secondary: #7b4b94;
 
     --gray-5: #f7f7f7;
-    --gray-10: #f0f0f0;
+    --gray-10: #f4f4f4;
     --gray-20: #e0e0e0;
-    --gray-30: #d0d0d0;
+    --gray-30: #d9d9d9;
     --gray-40: #c0c0c0;
     --gray-50: #b0b0b0;
-    --gray-60: #a0a0a0;
-    --gray-70: #909090;
-    --gray-80: #808080;
-    --gray-90: #707070;
+    --gray-60: #404040;
+    --gray-70: #272727;
+    --gray-80: #1d1d1d;
+    --gray-90: #111111;
 
     --hdHeight: 80px;
 }
@@ -36,4 +41,11 @@
 body {
     color: var(--foreground);
     background: var(--background);
+}
+
+.btn {
+    &.lg {
+        background: #60c37e;
+        color: var(--gray-90);
+    }
 }

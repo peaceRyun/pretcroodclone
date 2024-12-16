@@ -39,10 +39,22 @@ a {
 
 .font-proxima {
     font-family: proxima-nova-extra-wide, sans-serif;
-    font-weight: 700;
 }
 
 .font-mobile-display1 {
     font-size: 35px;
+    font-weight: 700;
     line-height: 100%;
+}
+
+.font-mobile-display2 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+.font-btn {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 10px;
 }
