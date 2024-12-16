@@ -1,10 +1,6 @@
-'use client';
-
 import { Geist, Geist_Mono } from 'next/font/google';
 import './styles/globals.scss';
-import { useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import SkipNav from './components/layout/header/SkipNav';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -17,14 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export default function RootLayout({ children }) {
-    useEffect(() => {
-        // GSAP 및 ScrollTrigger 등록
-        gsap.registerPlugin(ScrollTrigger);
-    }, []);
-
     return (
         <html lang='ko'>
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+            <body>
+                <SkipNav />
+                <div id='wrap' className='relative min-h-screen bg-black'>
+                    {children}
+                </div>
+            </body>
         </html>
     );
 }
