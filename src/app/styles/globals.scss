@@ -29,6 +29,7 @@
     --gray-90: #111111;
 
     --hdHeight: 80px;
+    --vh: 1vh; //intro 영상 사이즈 관련
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,5 +51,17 @@ body {
         height: clamp(48px, 6.4vw, 72px);
         background: #60c37e;
         color: var(--gray-90);
+        transition: all 0.3s;
+        &:hover {
+            background: var(--Green__primary);
+        }
     }
+}
+
+.fullHeight {
+    min-height: calc(var(--vh, 1vh) * 100); //intro 영상 사이즈 관련
+}
+
+.fullHeight-h {
+    min-height: calc(var(--vh, 1vh) * 100 - 80px); //intro 영상 사이즈 관련
 }

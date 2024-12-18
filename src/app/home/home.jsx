@@ -5,6 +5,7 @@ import Main, { Section } from '../components/layout/main';
 import HeroSection from './components/HeroSection';
 import VideoSection from './components/VideoSection';
 import TalkSection from './components/TalkSection';
+import TestSection from './components/TestSection';
 
 const Home = () => {
     return (
@@ -12,7 +13,7 @@ const Home = () => {
             <Header />
             <Main>
                 <HeroSection />
-
+                <TestSection />
                 <Section>
                     <TalkSection />
                 </Section>

@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <html lang='ko'>
             <body>
                 <SkipNav />
-                <div id='wrap' className='relative min-h-screen bg-black'>
+                <div id='wrap' className='relative min-h-screen bg-gray-950 overflow-hidden;'>
                     {children}
                 </div>
             </body>
