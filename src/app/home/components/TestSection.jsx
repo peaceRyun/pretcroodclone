@@ -4,8 +4,8 @@ import React from 'react';
 const TestSection = () => {
     return (
         <>
-            <div className='my-[80px] mx-auto py-[500px] relative'>
-                <div className='rounded-2xl overflow-hidden w-full mx-auto aspect-video fullHeight sticky top-0'>
+            <section className='my-[80px] mx-auto sticky top-0 z-10'>
+                <div className='rounded-2xl overflow-hidden w-full mx-auto aspect-video fullHeight scale-90'>
                     <Image
                         src='/images/pattern/home/testsection1.jpg'
                         alt='#'
@@ -14,7 +14,7 @@ const TestSection = () => {
                         className='w-[1920px] h-[1080px] object-cover'
                     />
                 </div>
-            </div>
+            </section>
         </>
     );
 };

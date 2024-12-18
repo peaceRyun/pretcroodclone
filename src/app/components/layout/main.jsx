@@ -3,7 +3,7 @@ import React from 'react';
 const Main = ({ children }) => {
     return (
         <>
-            <main className='flex-1'>{children}</main>
+            <main className='flex-1 min-h-screen overflow-auto relative'>{children}</main>
         </>
     );
 };
