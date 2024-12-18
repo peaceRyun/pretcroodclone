@@ -14,10 +14,7 @@ const Home = () => {
             <Main>
                 <HeroSection />
                 <TestSection />
-
-                <Section>
-                    <TalkSection />
-                </Section>
+                <TalkSection />
             </Main>
             <Footer />
         </>
