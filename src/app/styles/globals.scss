@@ -44,7 +44,10 @@ body {
 }
 
 .btn {
-    &.lg {
+    &.green1 {
+        padding: 20px 80px;
+        border-radius: 100px;
+        height: clamp(48px, 6.4vw, 72px);
         background: #60c37e;
         color: var(--gray-90);
     }

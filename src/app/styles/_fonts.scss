@@ -45,6 +45,9 @@ a {
     font-size: 35px;
     font-weight: 700;
     line-height: 100%;
+    @media (min-width: 768px) {
+        font-size: clamp(60px, 6.8vw, 120px);
+    }
 }
 
 .font-mobile-display2 {
@@ -54,7 +57,7 @@ a {
 }
 
 .font-btn {
-    font-size: 16px;
+    font-size: clamp(16px, 2.133vw, 24px);
     font-weight: 500;
-    line-height: 10px;
+    line-height: clamp(48px, 6.4vw, 72px);
 }
