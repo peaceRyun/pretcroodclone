@@ -43,9 +43,14 @@ const Home = () => {
                 }
             )
             .to(imageContainerRef.current, {
-                scale: 1.05,
+                scale: 1.0,
                 duration: 0.7,
-                ease: 'none',
+                ease: 'power2.inOut',
+            })
+            .to(imageContainerRef.current, {
+                scale: 1.2,
+                duration: 30,
+                ease: 'power1.inOut',
             });
 
         return () => {
@@ -57,7 +62,7 @@ const Home = () => {
         <>
             <Header />
             <Main>
-                <div className='pin relative h-[300vh]' ref={pinRef}>
+                <div className='pin relative h-[300vh] pb-1500px' ref={pinRef}>
                     <section
                         ref={section1Ref}
                         className='sec1 w-full h-screen flex flex-col items-center justify-center gap-[40px] fixed top-0 z-20'
