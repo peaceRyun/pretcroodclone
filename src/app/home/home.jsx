@@ -22,11 +22,10 @@ const Home = () => {
             scrollTrigger: {
                 trigger: pinRef.current,
                 start: 'top top',
-                end: '+=200%',
+                end: '+=250%',
                 pin: true,
                 pinSpacing: true,
                 scrub: 1.5,
-                markers: true,
             },
         });
 
@@ -34,23 +33,23 @@ const Home = () => {
             .fromTo(
                 section2Ref.current,
                 {
-                    y: '75vh',
+                    y: '80vh',
                 },
                 {
                     y: '0',
                     ease: 'none',
-                    duration: 0.7,
+                    duration: 1.5,
                 }
             )
             .to(imageContainerRef.current, {
                 scale: 1.0,
-                duration: 0.7,
-                ease: 'power2.inOut',
+                duration: 1.5,
+                ease: 'none',
             })
             .to(imageContainerRef.current, {
                 scale: 1.2,
-                duration: 30,
-                ease: 'power1.inOut',
+                duration: 5,
+                ease: 'expo.out',
             });
 
         return () => {
@@ -65,7 +64,7 @@ const Home = () => {
                 <div className='pin relative h-[300vh] pb-1500px' ref={pinRef}>
                     <section
                         ref={section1Ref}
-                        className='sec1 w-full h-screen flex flex-col items-center justify-center gap-[40px] fixed top-0 z-20'
+                        className='sec1 w-full h-screen flex flex-col items-center justify-center gap-[40px] relative z-20'
                     >
                         <div className='text-center text-white uppercase -tracking-wider'>
                             <p className='font-proxima font-mobile-display1'>Set the trend</p>
