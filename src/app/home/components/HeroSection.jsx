@@ -4,7 +4,7 @@ import React from 'react';
 
 const HeroSection = () => {
     return (
-        <section className='w-full h-[95vh] fullHeight-h flex flex-col items-center justify-center gap-[40px] sticky top-0 z-20'>
+        <section className='w-full h-[95vh] fullHeight-h flex flex-col items-center justify-center gap-[40px] fixed top-0 z-20'>
             <div className='text-center text-white uppercase -tracking-wider'>
                 <p className='font-proxima font-mobile-display1 '>Set the trend</p>
                 <p className='font-proxima font-mobile-display1'>in digital fashion</p>

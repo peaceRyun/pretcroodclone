@@ -4,7 +4,7 @@ import React from 'react';
 const TestSection = () => {
     return (
         <>
-            <section className='my-[80px] mx-auto sticky top-[95vh] z-10'>
+            <section className='my-[80px] mx-auto sticky top-0 z-10'>
                 <div className='rounded-2xl overflow-hidden w-full mx-auto aspect-video fullHeight scale-90'>
                     <Image
                         src='/images/pattern/home/testsection1.jpg'
