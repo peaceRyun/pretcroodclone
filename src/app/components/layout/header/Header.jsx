@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
     return (
         <>
-            <header>header</header>
+            <header className='fixed top-0'>header</header>
         </>
     );
 };

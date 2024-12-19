@@ -1,29 +1,77 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
 import Header from '../components/layout/header/Header';
 import Footer from '../components/layout/Footer';
-import Main, { Section } from '../components/layout/main';
-import HeroSection from './components/HeroSection';
-import VideoSection from './components/VideoSection';
-import TalkSection from './components/TalkSection';
-import TestSection from './components/TestSection';
+import Main from '../components/layout/main';
 import Button from '../components/button/Button';
 import Image from 'next/image';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 const Home = () => {
+    const pinRef = useRef(null);
+    const section1Ref = useRef(null);
+    const section2Ref = useRef(null);
+    const imageContainerRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: pinRef.current,
+                start: 'top top', // 전체 컨테이너의 시작점
+                end: '+=200%',
+                pin: true,
+                pinSpacing: true,
+                scrub: 1.5,
+                markers: true, // 개발 시 마커 확인용 (나중에 제거)
+            },
+        });
+
+        timeline
+            .fromTo(
+                section2Ref.current,
+                {
+                    y: '75vh',
+                },
+                {
+                    y: '0',
+                    ease: 'none',
+                    duration: 0.7,
+                }
+            )
+            .to(imageContainerRef.current, {
+                scale: 1.05, // scale-90(0.9)에서 1로 변경
+                duration: 0.7, // 나머지 50% 동안 scale 애니메이션
+                ease: 'none',
+            });
+
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    }, []);
+
     return (
         <>
             <Header />
             <Main>
-                <div className=' relative'>
-                    <section className='w-full h-[95vh] fullHeight-h flex flex-col items-center justify-center gap-[40px] fixed top-0 z-20'>
+                <div className='pin relative h-[300vh]' ref={pinRef}>
+                    <section
+                        ref={section1Ref}
+                        className='sec1 w-full h-screen flex flex-col items-center justify-center gap-[40px] fixed top-0 z-20'
+                    >
                         <div className='text-center text-white uppercase -tracking-wider'>
-                            <p className='font-proxima font-mobile-display1 '>Set the trend</p>
+                            <p className='font-proxima font-mobile-display1'>Set the trend</p>
                             <p className='font-proxima font-mobile-display1'>in digital fashion</p>
                         </div>
                         <Button label='Start for Free' />
                     </section>
-                    <section className='my-[80px] mx-auto sticky top-0 z-10'>
-                        <div className='rounded-2xl overflow-hidden w-full mx-auto aspect-video fullHeight scale-90'>
+                    <section ref={section2Ref} className='sec2 w-full h-screen fixed top-0 z-10'>
+                        <div
+                            ref={imageContainerRef}
+                            className='rounded-2xl overflow-hidden w-full mx-auto aspect-video fullHeight scale-90'
+                        >
                             <Image
                                 src='/images/pattern/home/testsection1.jpg'
                                 alt='#'
