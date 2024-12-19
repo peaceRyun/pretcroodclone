@@ -1,60 +1,106 @@
 'use client';
 
 import { Container } from '@/app/components/layout/main';
+import { TALK_SECTION_DATA } from '@/app/data/texts';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { Box, Globe, Rocket, Shirt, Sparkles } from 'lucide-react';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const TalkSection = () => {
+    const pinTwoRef = useRef(null);
+    const textRefs = useRef([]);
+    const iconRefs = useRef([]);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: pinTwoRef.current,
+                start: 'top top',
+                end: '+=250%',
+                pin: true,
+                pinSpacing: true,
+                scrub: 1.5,
+            },
+        });
+
+        // 텍스트 애니메이션
+        textRefs.current.forEach((element, index) => {
+            timeline.set(
+                element,
+                {
+                    color: '#ffffff',
+                },
+                index * 0.05
+            );
+        });
+
+        // 아이콘 애니메이션
+        iconRefs.current.forEach((element, index) => {
+            // SVG 내부의 모든 요소를 선택
+            const svgElements = element.querySelector('svg');
+            if (svgElements) {
+                timeline.set(
+                    svgElements,
+                    {
+                        attr: { stroke: '#2aea65' },
+                    },
+                    index * 0.1
+                );
+            }
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    }, []);
+
+    const addToTextRefs = (el) => {
+        if (el && !textRefs.current.includes(el)) {
+            textRefs.current.push(el);
+        }
+    };
+
+    const addToIconRefs = (el) => {
+        if (el && !iconRefs.current.includes(el)) {
+            iconRefs.current.push(el);
+        }
+    };
+
+    const renderIcon = (index) => {
+        const IconComponents = [Shirt, Globe, Box, Rocket, Sparkles];
+        const iconIndex = Math.floor(index / 10);
+        const IconComponent = IconComponents[iconIndex];
+        return (
+            <div key={`icon-${index}`} ref={addToIconRefs} className='inline-block mx-1'>
+                <IconComponent size={36} strokeWidth={2.5} />
+            </div>
+        );
+    };
+
     return (
-        <>
-            <section className='min-h-screen flex items-center justify-center '>
-                <Container className='cont'>
-                    <div className='font-mobile-display2 font-proxima'>
-                        <div className='font-talk text-[rgb(64,64,64)]'>We,</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>the</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>PRETCOORD</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>team,</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>make</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>it</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>possible</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>to</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>bring</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>your</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>fashion</div>
-                        <Shirt size={36} color='#2aea65' strokeWidth={2.5} className='inline-block mx-1' />
-                        <div className='font-talk text-[rgb(64,64,64)]'>into</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>the</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>digital</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>world</div>
-                        <Globe size={36} color='#2aea65' strokeWidth={2.5} className='inline-block mx-1' />
-                        <div className='font-talk text-[rgb(64,64,64)]'>With</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>cutting-edge</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>3D</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>technology</div>
-                        <Box size={36} color='#2aea65' strokeWidth={2.5} className='inline-block mx-1' />
-                        <div className='font-talk text-[rgb(64,64,64)]'>we</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>empower</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>your</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>creative</div>
-                        <Rocket size={36} color='#2aea65' strokeWidth={2.5} className='inline-block mx-1' />
-                        <div className='font-talk text-[rgb(64,64,64)]'>vision,</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>transforming</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>ideas</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>into</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>reality</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>and</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>seamlessly</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>integrating</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>fashion</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>into</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>the</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>digital</div>
-                        <div className='font-talk text-[rgb(64,64,64)]'>space</div>
-                        <Sparkles size={36} color='#2aea65' strokeWidth={2.5} className='inline-block mx-1' />
-                    </div>
-                </Container>
-            </section>
-        </>
+        <section className='min-h-screen flex items-center justify-center relative' ref={pinTwoRef}>
+            <Container className='cont'>
+                <div className='font-mobile-display2 font-proxima'>
+                    {TALK_SECTION_DATA.map((text, index) => {
+                        if (text === null) {
+                            return renderIcon(index);
+                        }
+                        return (
+                            <div
+                                key={index}
+                                ref={addToTextRefs}
+                                className='font-talk text-[rgb(64,64,64)] inline-block mr-2'
+                            >
+                                {text}
+                            </div>
+                        );
+                    })}
+                </div>
+            </Container>
+        </section>
     );
 };
 
