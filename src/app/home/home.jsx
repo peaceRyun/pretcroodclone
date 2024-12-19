@@ -20,12 +20,12 @@ const Home = () => {
         const timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: pinRef.current,
-                start: 'top top', // 전체 컨테이너의 시작점
+                start: 'top top',
                 end: '+=200%',
                 pin: true,
                 pinSpacing: true,
                 scrub: 1.5,
-                markers: true, // 개발 시 마커 확인용 (나중에 제거)
+                markers: true,
             },
         });
 
@@ -42,8 +42,8 @@ const Home = () => {
                 }
             )
             .to(imageContainerRef.current, {
-                scale: 1.05, // scale-90(0.9)에서 1로 변경
-                duration: 0.7, // 나머지 50% 동안 scale 애니메이션
+                scale: 1.05,
+                duration: 0.7,
                 ease: 'none',
             });
 

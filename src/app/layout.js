@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export default function RootLayout({ children }) {
     return (
         <html lang='ko'>
+            <head>
+                <link rel='stylesheet' href='https://use.typekit.net/bdn8hmi.css' />
+            </head>
             <body>
                 <SkipNav />
                 <div id='wrap' className='relative min-h-screen bg-gray-950'>
