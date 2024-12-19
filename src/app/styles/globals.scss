@@ -65,3 +65,9 @@ body {
 .fullHeight-h {
     min-height: calc(var(--vh, 1vh) * 100 - 80px); //intro 영상 사이즈 관련
 }
+
+.cont {
+    width: clamp(240px, 89vw, 1480px);
+    height: 100%;
+    margin: 0 auto;
+}

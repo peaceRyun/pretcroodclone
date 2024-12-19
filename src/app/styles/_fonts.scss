@@ -51,7 +51,7 @@ a {
 }
 
 .font-mobile-display2 {
-    font-size: 28px;
+    font-size: clamp(28px, 3.733vw, 72px);
     font-weight: 500;
     line-height: 140%;
 }
@@ -60,4 +60,10 @@ a {
     font-size: clamp(16px, 2.133vw, 24px);
     font-weight: 500;
     line-height: clamp(48px, 6.4vw, 72px);
+}
+
+.font-talk {
+    position: relative;
+    display: inline-block;
+    margin: 0 0.2rem;
 }
