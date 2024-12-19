@@ -7,6 +7,7 @@ import Button from '../components/button/Button';
 import Image from 'next/image';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import TalkSection from './components/TalkSection';
 
 const Home = () => {
     const pinRef = useRef(null);
@@ -82,6 +83,7 @@ const Home = () => {
                         </div>
                     </section>
                 </div>
+                <TalkSection />
             </Main>
             <Footer />
         </>
