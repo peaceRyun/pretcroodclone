@@ -154,3 +154,98 @@ export const useTalkSectionAnimation = () => {
 
     return { pinTwoRef, addToTextRefs, addToIconRefs };
 };
+
+export const useSlideAnimation = () => {
+    const howItWorksRef = useRef(null);
+    const stepSlidesRef = useRef([]);
+    const timelineRef = useRef(null);
+    const isInitializedRef = useRef(false);
+
+    useEffect(() => {
+        if (!gsap.plugins?.ScrollTrigger) {
+            gsap.registerPlugin(ScrollTrigger);
+        }
+
+        if (isInitializedRef.current) return;
+        isInitializedRef.current = true;
+
+        const cleanupTriggers = () => {
+            if (timelineRef.current) {
+                timelineRef.current.kill();
+                timelineRef.current = null;
+            }
+            ScrollTrigger.getAll()
+                .filter((trigger) => trigger.vars.trigger === howItWorksRef.current)
+                .forEach((trigger) => trigger.kill());
+        };
+
+        cleanupTriggers();
+
+        const initAnimation = () => {
+            if (!howItWorksRef.current || stepSlidesRef.current.length === 0) return;
+
+            // 기본 스타일 설정
+            gsap.set(howItWorksRef.current, {
+                width: '100%',
+                overflow: 'hidden',
+                position: 'relative',
+                height: '50vh',
+                // top: '50%',
+                // left: '50%',
+                // transform: 'translate(-50%, -50%)',
+            });
+
+            gsap.set(stepSlidesRef.current, {
+                position: 'absolute',
+                left: '100%',
+                width: '100%',
+                height: '100%',
+            });
+            gsap.set(stepSlidesRef.current[0], { left: '0%' });
+
+            timelineRef.current = gsap.timeline({
+                scrollTrigger: {
+                    trigger: howItWorksRef.current,
+                    pin: true,
+                    scrub: 1,
+                    start: 'top top',
+                    end: '+=300%',
+                },
+            });
+
+            stepSlidesRef.current.forEach((slide, i) => {
+                if (i < stepSlidesRef.current.length - 1) {
+                    timelineRef.current
+                        .to(slide, {
+                            left: '-100%',
+                            ease: 'none',
+                        })
+                        .to(
+                            stepSlidesRef.current[i + 1],
+                            {
+                                left: '0%',
+                                ease: 'none',
+                            },
+                            '<'
+                        );
+                }
+            });
+        };
+
+        const timeoutId = setTimeout(initAnimation, 100);
+
+        return () => {
+            clearTimeout(timeoutId);
+            cleanupTriggers();
+            isInitializedRef.current = false;
+        };
+    }, []);
+
+    const addToSlideRefs = (el) => {
+        if (el && !stepSlidesRef.current.includes(el)) {
+            stepSlidesRef.current = [...stepSlidesRef.current.filter(Boolean), el];
+        }
+    };
+
+    return { howItWorksRef, addToSlideRefs };
+};
