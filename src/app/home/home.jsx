@@ -5,63 +5,16 @@ import Footer from '../components/layout/Footer';
 import Main from '../components/layout/main';
 import Button from '../components/button/Button';
 import Image from 'next/image';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import TalkSection from './components/TalkSection';
+import { useHomeAnimation } from '../hooks/useGsapAnimation';
 
 const Home = () => {
-    const pinRef = useRef(null);
-    const section1Ref = useRef(null);
-    const section2Ref = useRef(null);
-    const imageContainerRef = useRef(null);
-
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const timeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: pinRef.current,
-                start: 'top top',
-                end: '+=250%',
-                pin: true,
-                pinSpacing: true,
-                scrub: 1.5,
-            },
-        });
-
-        timeline
-            .fromTo(
-                section2Ref.current,
-                {
-                    y: '80vh',
-                },
-                {
-                    y: '0',
-                    ease: 'none',
-                    duration: 1.5,
-                }
-            )
-            .to(imageContainerRef.current, {
-                scale: 1.0,
-                duration: 1.5,
-                ease: 'none',
-            })
-            .to(imageContainerRef.current, {
-                scale: 1.2,
-                duration: 5,
-                ease: 'expo.out',
-            });
-
-        return () => {
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        };
-    }, []);
-
+    const { pinRef, section1Ref, section2Ref, imageContainerRef } = useHomeAnimation();
     return (
         <>
             <Header />
             <Main>
-                <div className='pin relative h-screen pb-[1200px]' ref={pinRef}>
+                <div className='pin relative h-[200vh] pb-[1200px]' ref={pinRef}>
                     <section
                         ref={section1Ref}
                         className='sec1 w-full h-screen flex flex-col items-center justify-center gap-[40px] relative z-20'
@@ -72,7 +25,7 @@ const Home = () => {
                         </div>
                         <Button label='Start for Free' />
                     </section>
-                    <section ref={section2Ref} className='sec2 w-full h-screen fixed top-0 z-10'>
+                    <section ref={section2Ref} className='sec2 w-full h-screen absolute top-0 z-10'>
                         <div
                             ref={imageContainerRef}
                             className='rounded-2xl overflow-hidden w-full mx-auto aspect-video fullHeight scale-90'
