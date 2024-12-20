@@ -81,10 +81,10 @@ export const useTalkSectionAnimation = () => {
                 scrollTrigger: {
                     trigger: pinTwoRef.current,
                     start: 'top top',
-                    end: '+=100%',
+                    end: '+=600%',
                     pin: true,
                     pinSpacing: true,
-                    scrub: 20,
+                    scrub: 1,
                     ease: 'none',
                 },
             });

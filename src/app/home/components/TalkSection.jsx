@@ -52,6 +52,4 @@ const TalkSection = () => {
     );
 };
 
-TalkSection.displayName = 'TalkSection';
-
 export default TalkSection;
