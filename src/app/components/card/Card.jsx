@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const MiniCard = ({ subtitle, p }) => {
+    const [isActive, setIsActive] = useState(false);
+
     return (
-        <>
-            <li>
-                <div className='rounded-3xl bg-[rgb(25_25_25)] p-[1.75rem] text-white font-proxima '>
-                    <h3 className='font-display3'>{subtitle}</h3>
-                    <p>{p}</p>
-                </div>
-            </li>
-        </>
+        <li>
+            <button
+                className={`block rounded-3xl p-7 w-full text-left transition-all duration-300 ${
+                    isActive ? 'bg-white text-black' : 'bg-[rgb(25,25,25)] text-white'
+                }`}
+                onClick={() => setIsActive(!isActive)}
+            >
+                <h3
+                    className={`font-proxima font-display3 transition-all duration-300 ${
+                        isActive ? 'text-2xl mb-4' : 'text-xl'
+                    }`}
+                >
+                    {subtitle}
+                </h3>
+                {isActive && <p className='font-proxima text-base transition-all duration-300'>{p}</p>}
+            </button>
+        </li>
     );
 };
 

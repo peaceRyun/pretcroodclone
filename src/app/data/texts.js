@@ -41,3 +41,21 @@ export const TALK_SECTION_DATA = [
     'space',
     null,
 ];
+
+export const WITH_SECTION_DATA = [
+    {
+        id: 1,
+        subtitle: 'BUILD TRUE MARKET',
+        p: 'PRETCOORD, designed for fashion businesses, simplifies the design, management, and distribution of 3D garments across digital platforms. By supporting a self-sustaining ecosystem, it helps create a true fashion market in the digital space, where fashion evolves and circulates season after season.',
+    },
+    {
+        id: 2,
+        subtitle: 'EFFORTLESS CREATION',
+        p: 'With powerful optimization tools, PRETCOORD seamlessly creates and converts 3D garments across various digital formats (PC, web, mobile, AR, VR, and more), effortlessly adapting a single garment design to suit different 3D spaces and devices.',
+    },
+    {
+        id: 3,
+        subtitle: 'DESIGN INTEGRITY ',
+        p: 'Built with insights from expert character modelers and 3D garment designers, PRETCOORD ensures that garments maintain their original design integrity across diverse digital platforms, preserving the essence of each creation while enhancing their visual appeal and functionality in virtual environments.',
+    },
+];

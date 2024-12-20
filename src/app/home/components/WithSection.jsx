@@ -1,4 +1,5 @@
 import MiniCard from '@/app/components/card/Card';
+import { WITH_SECTION_DATA } from '@/app/data/texts';
 import React from 'react';
 
 const WithSection = () => {
@@ -9,9 +10,9 @@ const WithSection = () => {
                     <strong>do it with us</strong>
                 </h2>
                 <ul className='flex flex-col gap-3'>
-                    <MiniCard subtitle='BUILD TRUE MARKET' />
-                    <MiniCard subtitle='EFFORTLESS CREATION' />
-                    <MiniCard subtitle='DESIGN INTEGRITY ' />
+                    {WITH_SECTION_DATA.map((item) => (
+                        <MiniCard key={item.id} subtitle={item.subtitle} p={item.p} />
+                    ))}
                 </ul>
             </div>
         </>
