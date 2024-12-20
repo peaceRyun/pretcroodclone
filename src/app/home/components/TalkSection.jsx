@@ -11,13 +11,19 @@ const TalkSection = memo(() => {
 
     const renderIcon = (index) => {
         const IconComponents = [Shirt, Globe, Box, Rocket, Sparkles];
-        const iconIndex = Math.floor(index / 10);
-        const IconComponent = IconComponents[iconIndex];
-        return (
+        const nullToIconIndex = {
+            11: 0, // Shirt
+            16: 1, // Globe
+            21: 2, // Box
+            26: 3, // Rocket
+            40: 4, // Sparkles
+        };
+        const IconComponent = IconComponents[nullToIconIndex[index]];
+        return IconComponent ? (
             <div key={`icon-${index}`} ref={addToIconRefs} className='inline-block mx-1'>
                 <IconComponent size={36} strokeWidth={2.5} />
             </div>
-        );
+        ) : null;
     };
 
     return (

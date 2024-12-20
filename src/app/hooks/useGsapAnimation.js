@@ -93,15 +93,33 @@ export const useTalkSectionAnimation = () => {
             // 텍스트 애니메이션
             textRefs.current.forEach((element, index) => {
                 if (element) {
-                    timelineRef.current.set(element, { color: '#ffffff' }, index * 0.05);
+                    timelineRef.current.fromTo(
+                        element,
+                        { color: 'rgb(64,64,64)' }, // 시작 색상
+                        {
+                            color: '#ffffff', // 끝 색상
+                            duration: 0.1, // 빠른 전환
+                            ease: 'none',
+                        },
+                        index * 0.2 // 각 단어 사이의 간격
+                    );
                 }
             });
 
-            // 아이콘 애니메이션
+            // 아이콘 애니메이션 - 텍스트와 동일한 방식으로
             iconRefs.current.forEach((element, index) => {
                 const svgElements = element?.querySelector('svg');
                 if (svgElements) {
-                    timelineRef.current.set(svgElements, { attr: { stroke: '#2aea65' } }, index * 0.1);
+                    timelineRef.current.fromTo(
+                        svgElements,
+                        { attr: { stroke: 'rgb(64,64,64)' } }, // 시작 색상
+                        {
+                            attr: { stroke: '#2aea65' }, // 끝 색상
+                            duration: 0.1, // 빠른 전환
+                            ease: 'none',
+                        },
+                        index * 0.2 // 각 아이콘 사이의 간격
+                    );
                 }
             });
         };
