@@ -14,7 +14,7 @@ const Home = () => {
         <>
             <Header />
             <Main>
-                <div className='pin relative h-[200vh] pb-[1200px]' ref={pinRef}>
+                <div className='pin relative h-screen' ref={pinRef}>
                     <section
                         ref={section1Ref}
                         className='sec1 w-full h-screen flex flex-col items-center justify-center gap-[40px] relative z-20'
