@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import { TALK_SECTION_DATA } from '../data/texts';
 
 export const useHomeAnimation = () => {
     const pinRef = useRef(null);
@@ -58,7 +59,6 @@ export const useTalkSectionAnimation = () => {
             gsap.registerPlugin(ScrollTrigger);
         }
 
-        // 이미 초기화되었다면 리턴
         if (isInitializedRef.current) return;
         isInitializedRef.current = true;
 
@@ -72,10 +72,8 @@ export const useTalkSectionAnimation = () => {
                 .forEach((trigger) => trigger.kill());
         };
 
-        // 새로운 타임라인 생성 전에 기존 것들 정리
         cleanupTriggers();
 
-        // refs가 모두 설정된 후에 애니메이션 시작
         const initAnimation = () => {
             if (!pinTwoRef.current || textRefs.current.length === 0) return;
 
@@ -90,41 +88,48 @@ export const useTalkSectionAnimation = () => {
                 },
             });
 
-            // 텍스트 애니메이션
-            textRefs.current.forEach((element, index) => {
-                if (element) {
-                    timelineRef.current.fromTo(
-                        element,
-                        { color: 'rgb(64,64,64)' }, // 시작 색상
-                        {
-                            color: '#ffffff', // 끝 색상
-                            duration: 0.1, // 빠른 전환
-                            ease: 'none',
-                        },
-                        index * 0.2 // 각 단어 사이의 간격
-                    );
-                }
-            });
+            // TALK_SECTION_DATA를 순회하면서 텍스트와 아이콘 애니메이션을 처리
+            let textIndex = 0;
+            let iconIndex = 0;
 
-            // 아이콘 애니메이션 - 텍스트와 동일한 방식으로
-            iconRefs.current.forEach((element, index) => {
-                const svgElements = element?.querySelector('svg');
-                if (svgElements) {
-                    timelineRef.current.fromTo(
-                        svgElements,
-                        { attr: { stroke: 'rgb(64,64,64)' } }, // 시작 색상
-                        {
-                            attr: { stroke: '#2aea65' }, // 끝 색상
-                            duration: 0.1, // 빠른 전환
-                            ease: 'none',
-                        },
-                        index * 0.2 // 각 아이콘 사이의 간격
-                    );
+            TALK_SECTION_DATA.forEach((item, index) => {
+                if (item === null) {
+                    // 아이콘 애니메이션
+                    const iconElement = iconRefs.current[iconIndex];
+                    const svgElement = iconElement?.querySelector('svg');
+                    if (svgElement) {
+                        timelineRef.current.fromTo(
+                            svgElement,
+                            { attr: { stroke: 'rgb(64,64,64)' } },
+                            {
+                                attr: { stroke: '#2aea65' },
+                                duration: 0.1,
+                                ease: 'none',
+                            },
+                            index * 0.2 // null 위치에 맞춰 타이밍 설정
+                        );
+                    }
+                    iconIndex++;
+                } else {
+                    // 텍스트 애니메이션
+                    const textElement = textRefs.current[textIndex];
+                    if (textElement) {
+                        timelineRef.current.fromTo(
+                            textElement,
+                            { color: 'rgb(64,64,64)' },
+                            {
+                                color: '#ffffff',
+                                duration: 0.1,
+                                ease: 'none',
+                            },
+                            index * 0.2 // TALK_SECTION_DATA의 인덱스에 맞춰 타이밍 설정
+                        );
+                    }
+                    textIndex++;
                 }
             });
         };
 
-        // 약간의 지연 후 애니메이션 초기화
         const timeoutId = setTimeout(initAnimation, 100);
 
         return () => {
