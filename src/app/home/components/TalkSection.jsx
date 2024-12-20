@@ -4,9 +4,9 @@ import { Container } from '@/app/components/layout/main';
 import { TALK_SECTION_DATA } from '@/app/data/texts';
 import { useTalkSectionAnimation } from '@/app/hooks/useGsapAnimation';
 import { Box, Globe, Rocket, Shirt, Sparkles } from 'lucide-react';
-import React from 'react';
+import React, { memo } from 'react';
 
-const TalkSection = () => {
+const TalkSection = memo(() => {
     const { pinTwoRef, addToTextRefs, addToIconRefs } = useTalkSectionAnimation();
 
     const renderIcon = (index) => {
@@ -29,19 +29,21 @@ const TalkSection = () => {
                             return renderIcon(index);
                         }
                         return (
-                            <div
+                            <span
                                 key={index}
                                 ref={addToTextRefs}
                                 className='font-talk text-[rgb(64,64,64)] inline-block mr-2'
                             >
                                 {text}
-                            </div>
+                            </span>
                         );
                     })}
                 </div>
             </Container>
         </section>
     );
-};
+});
+
+TalkSection.displayName = 'TalkSection';
 
 export default TalkSection;
