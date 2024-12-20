@@ -84,7 +84,8 @@ export const useTalkSectionAnimation = () => {
                     end: '+=100%',
                     pin: true,
                     pinSpacing: true,
-                    scrub: 3,
+                    scrub: 20,
+                    ease: 'none',
                 },
             });
 

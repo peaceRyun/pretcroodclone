@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
             </head>
             <body>
                 <SkipNav />
-                <div id='wrap' className='relative min-h-screen bg-gray-950'>
+                <div id='wrap' className='relative min-h-screen wrap-bgc'>
                     {children}
                 </div>
             </body>

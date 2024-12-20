@@ -56,6 +56,13 @@ a {
     line-height: 140%;
 }
 
+.font-display3 {
+    font-size: clamp(24px, 2.655vw, 32px);
+    font-weight: 600;
+    letter-spacing: -0.05rem;
+    line-height: 1;
+}
+
 .font-btn {
     font-size: clamp(16px, 2.133vw, 24px);
     font-weight: 500;

@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Header from '../components/layout/header/Header';
 import Footer from '../components/layout/Footer';
 import Main from '../components/layout/main';
@@ -7,6 +7,7 @@ import Button from '../components/button/Button';
 import Image from 'next/image';
 import TalkSection from './components/TalkSection';
 import { useHomeAnimation } from '../hooks/useGsapAnimation';
+import WithSection from './components/WithSection';
 
 const Home = () => {
     const { pinRef, section1Ref, section2Ref, imageContainerRef } = useHomeAnimation();
@@ -25,7 +26,7 @@ const Home = () => {
                         </div>
                         <Button label='Start for Free' />
                     </section>
-                    <section ref={section2Ref} className='sec2 w-full h-screen absolute top-0 z-10'>
+                    <section ref={section2Ref} className='sec2 w-full h-screen absolute top-0 z-10 overflow-hidden'>
                         <div
                             ref={imageContainerRef}
                             className='rounded-2xl overflow-hidden w-full mx-auto aspect-video fullHeight scale-90'
@@ -41,6 +42,7 @@ const Home = () => {
                     </section>
                 </div>
                 <TalkSection />
+                <WithSection />
             </Main>
             <Footer />
         </>
