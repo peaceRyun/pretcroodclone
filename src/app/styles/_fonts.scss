@@ -41,7 +41,7 @@ a {
     font-family: 'proxima-nova-extra-wide', sans-serif;
 }
 
-.font-mobile-display1 {
+.font-display1 {
     font-size: 35px;
     font-weight: 700;
     line-height: 100%;
@@ -50,7 +50,7 @@ a {
     }
 }
 
-.font-mobile-display2 {
+.font-display2 {
     font-size: clamp(28px, 3.733vw, 72px);
     font-weight: 500;
     line-height: 140%;
@@ -78,4 +78,9 @@ a {
     position: relative;
     display: inline-block;
     margin: 0 0.2rem;
+}
+
+.icon-talk {
+    width: clamp(36px, 4.8vw, 68px);
+    height: clamp(36px, 4.8vw, 68px);
 }

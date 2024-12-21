@@ -22,8 +22,8 @@ const Home = () => {
                         className='sec1 w-full h-screen flex flex-col items-center justify-center gap-[40px] relative z-20'
                     >
                         <div className='text-center text-white uppercase -tracking-wider'>
-                            <p className='font-proxima font-mobile-display1'>Set the trend</p>
-                            <p className='font-proxima font-mobile-display1'>in digital fashion</p>
+                            <p className='font-proxima font-display1'>Set the trend</p>
+                            <p className='font-proxima font-display1'>in digital fashion</p>
                         </div>
                         <Button label='Start for Free' />
                     </section>

@@ -22,7 +22,7 @@ const WithSection = () => {
 
     return (
         <div className='flex flex-col gap-20 py-24 px-3'>
-            <h2 className='mx-auto uppercase font-proxima text-white font-mobile-display2'>
+            <h2 className='mx-auto uppercase font-proxima text-white font-display2'>
                 <strong>do it with us</strong>
             </h2>
             <ul ref={sectionRef} className='flex flex-col gap-3'>

@@ -21,7 +21,7 @@ const TalkSection = () => {
         const IconComponent = IconComponents[nullToIconIndex[index]];
         return IconComponent ? (
             <div key={`icon-${index}`} ref={addToIconRefs} className='inline-block mx-1'>
-                <IconComponent size={36} strokeWidth={2.5} />
+                <IconComponent strokeWidth={2.3} className='icon-talk' />
             </div>
         ) : null;
     };
@@ -30,7 +30,7 @@ const TalkSection = () => {
         <section className='h-screen flex items-center justify-center relative' ref={pinTwoRef}>
             <div className='flex items-center justify-center'>
                 <Container>
-                    <div className='m-auto font-mobile-display2 font-proxima'>
+                    <div className='m-auto font-display2 font-proxima'>
                         {TALK_SECTION_DATA.map((text, index) => {
                             if (text === null) {
                                 return renderIcon(index);
