@@ -19,7 +19,7 @@ export const useHomeAnimation = () => {
             scrollTrigger: {
                 trigger: pinRef.current,
                 start: 'top top',
-                end: '+=100%',
+                end: '+=600%',
                 pin: true,
                 pinSpacing: true,
                 scrub: 1.5,
@@ -27,7 +27,7 @@ export const useHomeAnimation = () => {
         });
 
         timeline
-            .fromTo(section2Ref.current, { y: '80vh' }, { y: '0', ease: 'none', duration: 1.5 })
+            .fromTo(section2Ref.current, { y: '80vh' }, { y: '0', ease: 'none', duration: 3 })
             .to(imageContainerRef.current, {
                 scale: 1.0,
                 duration: 1.5,
