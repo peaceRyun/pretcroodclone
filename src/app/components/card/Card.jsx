@@ -102,14 +102,17 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <div className='titlebox '>
+            <div className='title-wrap'>
                 <h3 ref={titleRef} className='font-proxima font-display3-desktop lg:w-1/2 origin-left'>
                     {subtitle}
                 </h3>
             </div>
-            <p ref={paragraphRef} className='font-proxima-normal font-bold text-xs leading-6 lg:w-1/2 lg:text-lg'>
-                {p}
-            </p>
+
+            <div className='text-wrap'>
+                <p ref={paragraphRef} className='font-proxima-normal font-bold text-xs leading-6 lg:w-1/2 lg:text-lg'>
+                    {p}
+                </p>
+            </div>
         </div>
     );
 };
