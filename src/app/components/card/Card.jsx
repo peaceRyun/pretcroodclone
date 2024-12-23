@@ -43,7 +43,7 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
                 {
                     height: 'auto',
                     opacity: 1,
-                    duration: 0.3,
+                    duration: 0.7,
                     ease: 'power3.out',
                 },
                 '<'
@@ -55,6 +55,7 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
                     yPercent: 0,
                     color: '#131313',
                     duration: 0.3,
+                    delay: 0.2,
                     ease: 'power3.out',
                 },
                 '<'
