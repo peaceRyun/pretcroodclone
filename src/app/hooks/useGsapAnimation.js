@@ -27,7 +27,7 @@ export const useHomeAnimation = () => {
         });
 
         timeline
-            .fromTo(section2Ref.current, { y: '80vh' }, { y: '0', ease: 'none', duration: 3 })
+            .fromTo(section2Ref.current, { y: '80vh' }, { y: '0', ease: 'none', duration: 2 })
             .to(imageContainerRef.current, {
                 scale: 1.0,
                 duration: 1.5,
@@ -35,7 +35,7 @@ export const useHomeAnimation = () => {
             })
             .to(imageContainerRef.current, {
                 scale: 1.2,
-                duration: 5,
+                duration: 4,
                 ease: 'expo.out',
             });
 
@@ -189,7 +189,7 @@ export const useSlideAnimation = () => {
                 width: '100%',
                 overflow: 'hidden',
                 position: 'relative',
-                height: '50vh',
+                height: '100vh',
                 // top: '50%',
                 // left: '50%',
                 // transform: 'translate(-50%, -50%)',
