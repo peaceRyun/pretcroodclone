@@ -6,6 +6,8 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
     const titleRef = useRef(null);
     const textWrapRef = useRef(null);
     const textContentRef = useRef(null);
+    const timelineRef = useRef(null);
+
     useEffect(() => {
         // 초기 설정
         gsap.set(textWrapRef.current, {
@@ -17,12 +19,29 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
             yPercent: 50,
             opacity: 0,
         });
+
+        // Cleanup function
+        return () => {
+            if (timelineRef.current) {
+                timelineRef.current.kill();
+            }
+        };
     }, []);
 
     const handleMouseEnter = () => {
-        const timeline = gsap.timeline();
+        // Kill any existing animation
+        if (timelineRef.current) {
+            timelineRef.current.kill();
+        }
 
-        timeline
+        timelineRef.current = gsap.timeline({
+            onComplete: () => {
+                gsap.set(textWrapRef.current, { clearProps: 'all' });
+                gsap.set(textContentRef.current, { clearProps: 'all' });
+            },
+        });
+
+        timelineRef.current
             .to(cardRef.current, {
                 backgroundColor: '#ffffff',
                 duration: 0.3,
@@ -65,9 +84,19 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
     };
 
     const handleMouseLeave = () => {
-        const timeline = gsap.timeline();
+        // Kill any existing animation
+        if (timelineRef.current) {
+            timelineRef.current.kill();
+        }
 
-        timeline
+        timelineRef.current = gsap.timeline({
+            onComplete: () => {
+                gsap.set(textWrapRef.current, { height: 0, opacity: 0 });
+                gsap.set(textContentRef.current, { yPercent: 50, opacity: 0 });
+            },
+        });
+
+        timelineRef.current
             .to(cardRef.current, {
                 backgroundColor: '#191919',
                 duration: 0.3,
