@@ -10,7 +10,7 @@ const SlideSection = () => {
         <section>
             <div ref={howItWorksRef} className='how-it-works text-white'>
                 <div className='flex '>
-                    <h2 className='fixed top-0 pt-[15vh] pl-[15vw] mx-auto uppercase font-proxima text-white font-display3-h2 !font-bold '>
+                    <h2 className='fixed top-0 pt-[15vh] mx-auto uppercase font-proxima text-white font-display3-h2 !font-bold text-center w-full '>
                         how it works
                     </h2>
 
@@ -20,7 +20,7 @@ const SlideSection = () => {
                             alt='person3d'
                             width={1000}
                             height={1000}
-                            className='image-calc h-auto absolute top-1/2 -translate-y-1/2'
+                            className='w-[500px] h-[700px] absolute top-1/2 -translate-y-1/2'
                         />
                     </div>
                     <div ref={addToSlideRefs} className='step-slide'>
@@ -29,7 +29,7 @@ const SlideSection = () => {
                             alt='person3d'
                             width={1000}
                             height={1000}
-                            className='image-calc h-auto absolute top-1/2 -translate-y-1/2'
+                            className='w-[500px] h-[700px] absolute top-1/2 -translate-y-1/2'
                         />
                     </div>
                     <div ref={addToSlideRefs} className='step-slide'>
@@ -38,7 +38,7 @@ const SlideSection = () => {
                             alt='person3d'
                             width={1000}
                             height={1000}
-                            className='image-calc h-auto absolute top-1/2 -translate-y-1/2'
+                            className='w-[500px] h-[700px] absolute top-1/2 -translate-y-1/2'
                         />
                     </div>
                     <div ref={addToSlideRefs} className='step-slide'>
@@ -47,7 +47,7 @@ const SlideSection = () => {
                             alt='person3d'
                             width={1000}
                             height={1000}
-                            className='image-calc h-auto absolute top-1/2 -translate-y-1/2'
+                            className='w-[500px] h-[700px] absolute top-1/2 -translate-y-1/2'
                         />
                     </div>
                     <div ref={addToSlideRefs} className='step-slide'>
@@ -56,7 +56,7 @@ const SlideSection = () => {
                             alt='person3d'
                             width={1000}
                             height={1000}
-                            className='image-calc h-auto absolute top-1/2 -translate-y-1/2'
+                            className='w-[500px] h-[700px] absolute top-1/2 -translate-y-1/2'
                         />
                     </div>
                 </div>
