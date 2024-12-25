@@ -9,22 +9,55 @@ const SlideSection = () => {
     return (
         <section>
             <div ref={howItWorksRef} className='how-it-works text-white'>
-                <div className='p-20 flex gap-20 relative'>
-                    <h2 className='font-proxima uppercase text-white fixed top-0'>how it works</h2>
+                <div className='flex '>
+                    <h2 className='fixed top-0 pt-[15vh] pl-[15vw] mx-auto uppercase font-proxima text-white font-display3-h2 !font-bold '>
+                        how it works
+                    </h2>
+
                     <div ref={addToSlideRefs} className='step-slide'>
                         <Image
-                            src='/images/pattern/home/slidesection/person3d.png'
+                            src='/images/pattern/home/slidesection/card_image_1.png'
                             alt='person3d'
                             width={1000}
                             height={1000}
-                            className='w-[200px] h-[200px]'
+                            className='image-calc h-auto absolute top-1/2 -translate-y-1/2'
                         />
                     </div>
                     <div ref={addToSlideRefs} className='step-slide'>
-                        STEP 2
+                        <Image
+                            src='/images/pattern/home/slidesection/card_image_2.png'
+                            alt='person3d'
+                            width={1000}
+                            height={1000}
+                            className='image-calc h-auto absolute top-1/2 -translate-y-1/2'
+                        />
                     </div>
                     <div ref={addToSlideRefs} className='step-slide'>
-                        STEP 3
+                        <Image
+                            src='/images/pattern/home/slidesection/card_image_3.png'
+                            alt='person3d'
+                            width={1000}
+                            height={1000}
+                            className='image-calc h-auto absolute top-1/2 -translate-y-1/2'
+                        />
+                    </div>
+                    <div ref={addToSlideRefs} className='step-slide'>
+                        <Image
+                            src='/images/pattern/home/slidesection/card_image_4.png'
+                            alt='person3d'
+                            width={1000}
+                            height={1000}
+                            className='image-calc h-auto absolute top-1/2 -translate-y-1/2'
+                        />
+                    </div>
+                    <div ref={addToSlideRefs} className='step-slide'>
+                        <Image
+                            src='/images/pattern/home/slidesection/card_image_5.png'
+                            alt='person3d'
+                            width={1000}
+                            height={1000}
+                            className='image-calc h-auto absolute top-1/2 -translate-y-1/2'
+                        />
                     </div>
                 </div>
             </div>
