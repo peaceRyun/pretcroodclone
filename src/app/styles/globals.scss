@@ -51,24 +51,59 @@ body {
     background: var(--background);
 }
 
-.wrap-bgc {
+// custom-background-color
+.bgc-g90 {
+    background-color: var(--Gray__90);
+}
+.bgc-g80 {
+    background-color: var(--Gray__80);
+}
+.bgc-g70 {
     background-color: var(--Gray__70);
 }
-
-.card-plan-bgc {
+.bgc-g60 {
     background-color: var(--Gray__60);
 }
-
-.card-plan-bgc-reverse {
+.bgc-g50 {
+    background-color: var(--Gray__50);
+}
+.bgc-g30 {
     background-color: var(--Gray__30);
 }
-
-.card-plan-txt {
-    color: var(--Gray__30);
+.bgc-g10 {
+    background-color: var(--Gray__10);
 }
 
-.card-plan-txt-reverse {
+// custom-color
+.color-g90 {
+    color: var(--Gray__90);
+}
+.color-g80 {
+    color: var(--Gray__80);
+}
+.color-g70 {
+    color: var(--Gray__70);
+}
+.color-g60 {
     color: var(--Gray__60);
+}
+.color-g50 {
+    color: var(--Gray__50);
+}
+.color-g30 {
+    color: var(--Gray__30);
+}
+.color-g10 {
+    color: var(--Gray__10);
+}
+
+.contact-radius {
+    border-radius: clamp(2px, 20vw, 220px);
+}
+
+.contact-icon-size {
+    width: clamp(60px, 8vw, 100px);
+    height: clamp(60px, 8vw, 100px);
 }
 
 .btn {

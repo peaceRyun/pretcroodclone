@@ -10,7 +10,7 @@ const SlideSection = () => {
     return (
         <section ref={sectionRef} className='flex flex-col gap-20 px-5 min-h-screen'>
             <div className='title-area flex'>
-                <p className='font-proxima font-display3-h2 text-white uppercase mx-auto'>how it works</p>
+                <p className='font-proxima font-display3-h2 text-white uppercase mx-auto py-10'>how it works</p>
             </div>
             <div className='img-slide-wrap overflow-hidden'>
                 <ul ref={slidesRef} className='img-slides flex gap-5'>
