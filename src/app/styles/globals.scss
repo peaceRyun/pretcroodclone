@@ -113,3 +113,12 @@ body {
     height: 100%;
     margin: 0 auto;
 }
+
+.layout-plan {
+    max-width: 1600px;
+    margin: clamp(40px, 8.127vw, 100px) auto 0;
+}
+
+.layout-plan-wrap {
+    padding: clamp(90px, 6.5vw, 120px) 0;
+}
