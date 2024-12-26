@@ -154,3 +154,63 @@ export const useTalkSectionAnimation = () => {
 
     return { pinTwoRef, addToTextRefs, addToIconRefs };
 };
+
+export const useSlideAnimation = () => {
+    const sectionRef = useRef(null); // 전체 섹션을 위한 ref 추가
+    const slidesRef = useRef(null);
+    const timelineRef = useRef(null);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+        }
+
+        const cleanupTriggers = () => {
+            if (timelineRef.current) {
+                timelineRef.current.kill();
+                timelineRef.current = null;
+            }
+            ScrollTrigger.getAll()
+                .filter((trigger) => trigger.vars.trigger === sectionRef.current)
+                .forEach((trigger) => trigger.kill());
+        };
+
+        const initAnimation = () => {
+            if (!slidesRef.current || !sectionRef.current) return;
+
+            const slides = slidesRef.current;
+            const slideWidth = slides.scrollWidth - slides.offsetWidth;
+
+            timelineRef.current = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top top',
+                    end: '+=100%',
+                    pin: true,
+                    pinSpacing: true,
+                    scrub: 1,
+                    anticipatePin: 1,
+                },
+            });
+
+            timelineRef.current.to(slides, {
+                x: -slideWidth,
+                ease: 'none',
+                duration: 1,
+            });
+        };
+
+        const initTimeout = setTimeout(() => {
+            cleanupTriggers();
+            initAnimation();
+        }, 500);
+
+        // Cleanup
+        return () => {
+            clearTimeout(initTimeout);
+            cleanupTriggers();
+        };
+    }, []);
+
+    return { sectionRef, slidesRef };
+};
