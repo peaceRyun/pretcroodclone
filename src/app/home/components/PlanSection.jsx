@@ -9,8 +9,8 @@ const PlanSection = () => {
                     <p className='font-proxima font-display3-h2 text-white uppercase mx-auto'>select a plan</p>
                     <div className='mt-10 p-5 flex flex-col gap-5'>
                         <PlanCard />
-                        <PlanCardWhite />
-                        <PlanCardWhite />
+                        <PlanCardWhite category='Standalone' />
+                        <PlanCardWhite category='Float' />
                     </div>
                 </div>
             </section>

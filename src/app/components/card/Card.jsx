@@ -200,12 +200,12 @@ export const PlanCard = () => {
     );
 };
 
-export const PlanCardWhite = () => {
+export const PlanCardWhite = ({ category }) => {
     return (
         <>
             <div className='p-5 flex flex-col gap-5 card-plan-bgc-reverse rounded-xl'>
                 <div className='plan-header flex flex-col gap-5  font-proxima-normal'>
-                    <span className='text-sm font-bold'>Standalone</span>
+                    <span className='text-sm font-bold'>{category}</span>
                     <h3 className='font-proxima font-display4-h3'>Enterprise</h3>
                     <p className='font-normal text-sm card-plan-txt-reverse'>
                         Perfect for teams or companies aiming to integrate 3D fashion into digital platforms.
