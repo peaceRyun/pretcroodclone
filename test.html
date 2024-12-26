@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .h-scroll {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                align-items: center;
+                align-items: hidden;
+            }
+
+            /* .kit */
+            .kit .gutter-100.text-wrap {
+                position: relative;
+            }
+            .kit .h-scroll {
+                height: 85vh;
+                padding-left: 160px;
+                padding-right: 160px;
+            }
+            .kit .digital-kit {
+                height: 100vh;
+            }
+            .kit .digital-kit .gutter-100 {
+                position: relative;
+                height: 100%;
+            }
+            .kit .kit-list > li {
+                position: absolute;
+                top: 70%;
+                font-weight: 500;
+                font-size: 260px;
+            }
+            .kit .kit-list > li:nth-child(1) {
+                left: var(--gutter-100);
+            }
+            .kit .kit-list > li:nth-child(2) {
+                left: calc(50% - 25%);
+            }
+            .kit .kit-list > li:nth-child(3) {
+                right: var(--gutter-100);
+            }
+            .kit .scroll-title {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-top: 240px;
+            }
+            .kit .img-wrap.ani {
+                position: absolute;
+                top: 0;
+                left: calc(50% - (102px * 2));
+                width: 319px;
+                height: 319px;
+                margin-top: 35px;
+                -webkit-transform-origin: 50% 50%;
+                -ms-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+            }
+            @media all and (min-width: 1921px) {
+                .kit .gutter-100.text-wrap {
+                    padding-right: 50px;
+                }
+                .kit .kit-list {
+                    margin-top: -180px;
+                }
+                .doit-boxes {
+                    padding-left: 120px;
+                    padding-right: 120px;
+                }
+                /* .kit .kit-list > li + li {margin-top: -90px;} */
+                .kit .scroll-title {
+                    justify-content: center;
+                }
+
+                .kit .h-scroll > .img-wrap:nth-child(1) {
+                    width: 500px;
+                    height: 700px;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(2) {
+                    width: 500px;
+                    height: 700px;
+                    margin-left: 60px;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(3) {
+                    width: 500px;
+                    height: 700px;
+                    margin-left: 60px;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(4) {
+                    width: 500px;
+                    height: 700px;
+                    margin-left: 60px;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(5) {
+                    width: 500px;
+                    height: 700px;
+                    margin-left: 60px;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(6) {
+                    width: 948px;
+                    height: 651px;
+                }
+            }
+            @media all and (min-width: 769px) and (max-width: 1920px) {
+                .kit .gutter-100.text-wrap {
+                    padding-right: 2.604vw;
+                }
+                .kit .kit-list {
+                    margin-top: -9.375vw;
+                }
+                .kit .kit-list > li {
+                    font-size: 13.542vw;
+                }
+                /* .kit .kit-list > li + li {margin-top: -4.688vw;} */
+                .kit .scroll-title {
+                    margin-top: 12.5vw;
+                }
+                .kit .img-wrap.ani {
+                    left: calc(50% - (5.313vw * 2));
+                    width: 16.615vw;
+                    height: 16.615vw;
+                    margin-top: 1.823vw;
+                }
+                .kit .h-scroll {
+                    padding-left: 8.333vw;
+                    padding-right: 8.333vw;
+                }
+
+                .kit .h-scroll > .img-wrap:nth-child(1) {
+                    width: 500px;
+                    height: 700px;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(2) {
+                    width: 500px;
+                    height: 700px;
+                    margin-left: 60px;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(3) {
+                    width: 500px;
+                    height: 700px;
+                    margin-left: 60px;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(4) {
+                    width: 500px;
+                    height: 700px;
+                    margin-left: 60px;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(5) {
+                    width: 500px;
+                    height: 700px;
+                    margin-left: 60px;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(6) {
+                    width: 948px;
+                    height: 651px;
+                }
+            }
+            @media all and (min-width: 769px) {
+                /*   .kit {margin-top: 150px;}*/
+            }
+            @media all and (max-width: 768px) {
+                .kit {
+                    margin-top: 10vh;
+                }
+                .kit .gutter-100.text-wrap {
+                    padding-bottom: 0;
+                }
+                .kit .h-scroll {
+                    padding-left: 5.333vw;
+                    padding-right: 5.333vw;
+                }
+                .kit .kit-list > li {
+                    top: 100%;
+                    font-size: 21.333vw;
+                    line-height: 1;
+                }
+                .kit .scroll-title {
+                    margin-top: 0;
+                }
+                .kit .img-wrap.ani {
+                    top: 50%;
+                    left: calc((50% / 2) + 0.333vw);
+                    width: 50.867vw;
+                    height: 50.867vw;
+                    margin-top: -17.867vw;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(1) {
+                    width: 90.667vw;
+                    height: 121.867vw;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(2) {
+                    width: 90.667vw;
+                    height: 121.867vw;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(3) {
+                    width: 90.667vw;
+                    height: 121.867vw;
+                    margin-left: 16vw;
+                    margin-right: 21.333vw;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(4) {
+                    width: 90.667vw;
+                    height: 121.867vw;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(5) {
+                    width: 90.667vw;
+                    height: 121.867vw;
+                }
+                .kit .h-scroll > .img-wrap:nth-child(6) {
+                    width: 148vw;
+                    height: 101.333vw;
+                }
+                .kit .h-scroll > .img-wrap:last-child {
+                    margin-left: 34.187vw;
+                }
+            }
+
+            .h-scroll > section,
+            .h-scroll > div {
+                flex-shrink: 0 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="kit">
+            <div class="gutter-100 text-wrap">
+                <h2>
+                    <div><p>HOW IT WORKS</p></div>
+                </h2>
+            </div>
+            <div class="h-scroll">
+                <div class="img-wrap">
+                    <img src="./public/images/pattern/home/slidesection/card_image_1.png" alt="card1" />
+                </div>
+                <div class="img-wrap">
+                    <img src="./public/images/pattern/home/slidesection/card_image_2.png" alt="card2" />
+                </div>
+                <div class="img-wrap">
+                    <img src="./public/images/pattern/home/slidesection/card_image_3.png" alt="card3" />
+                </div>
+                <div class="img-wrap">
+                    <img src="./public/images/pattern/home/slidesection/card_image_4.png" alt="card4" />
+                </div>
+                <div class="img-wrap">
+                    <img src="./public/images/pattern/home/slidesection/card_image_5.png" alt="card5" />
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
