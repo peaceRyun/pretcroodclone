@@ -10,6 +10,7 @@ import { useHomeAnimation } from '../hooks/useGsapAnimation';
 import WithSection from './components/WithSection';
 import SlideSection from './components/SlideSection';
 import PlanSection from './components/PlanSection';
+import HelpSection from './components/HelpSection';
 
 const Home = () => {
     const { pinRef, section1Ref, section2Ref, imageContainerRef } = useHomeAnimation();
@@ -47,6 +48,7 @@ const Home = () => {
                 <WithSection />
                 <SlideSection />
                 <PlanSection />
+                <HelpSection />
             </Main>
             <Footer />
         </>
