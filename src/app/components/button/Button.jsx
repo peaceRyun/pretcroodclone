@@ -8,4 +8,20 @@ const Button = ({ label }) => {
     );
 };
 
+export const ButtonWhite = ({ label }) => {
+    return (
+        <>
+            <button className='btn white1 font-btn !font-normal font-proxima-normal'>{label}</button>
+        </>
+    );
+};
+
+export const ButtonBlack = ({ label }) => {
+    return (
+        <>
+            <button className='btn black1 font-btn !font-normal font-proxima-normal'>{label}</button>
+        </>
+    );
+};
+
 export default Button;

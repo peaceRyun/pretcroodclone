@@ -9,6 +9,7 @@ import TalkSection from './components/TalkSection';
 import { useHomeAnimation } from '../hooks/useGsapAnimation';
 import WithSection from './components/WithSection';
 import SlideSection from './components/SlideSection';
+import PlanSection from './components/PlanSection';
 
 const Home = () => {
     const { pinRef, section1Ref, section2Ref, imageContainerRef } = useHomeAnimation();
@@ -45,6 +46,7 @@ const Home = () => {
                 <TalkSection />
                 <WithSection />
                 <SlideSection />
+                <PlanSection />
             </Main>
             <Footer />
         </>

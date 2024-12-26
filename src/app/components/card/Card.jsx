@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
+import { ButtonBlack, ButtonWhite } from '../button/Button';
+import { Check } from 'lucide-react';
 
 const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
     const cardRef = useRef(null);
@@ -155,6 +157,104 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
                 </div>
             </div>
         </div>
+    );
+};
+
+export const PlanCard = () => {
+    return (
+        <>
+            <div className='p-5 flex flex-col gap-5 card-plan-bgc rounded-xl'>
+                <div className='plan-header flex flex-col gap-5 text-white font-proxima-normal'>
+                    <span className='text-sm font-bold'>Standalone</span>
+                    <h3 className='font-proxima font-display4-h3'>Individual</h3>
+                    <p className='font-normal text-sm card-plan-txt'>
+                        Perfect for individuals or sole proprietors seeking to design and create 3D fashion.
+                    </p>
+                </div>
+                <ButtonWhite label='Start for Free' />
+                <div className='plan-detail flex flex-col gap-4 text-white font-proxima-normal'>
+                    <div>
+                        <h4 className='text-sm card-plan-txt'>User Count</h4>
+                        <div className='flex flex-start gap-2 items-center'>
+                            <Check size={16} />
+                            <span className='text-base'>Single user</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 className='text-sm card-plan-txt'>Training</h4>
+                        <div className='flex flex-start gap-2 items-center'>
+                            <Check size={16} />
+                            <span className='text-base'>Online Manuals and Tutorials</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 className='text-sm card-plan-txt'>User Count</h4>
+                        <div className='flex flex-start gap-2 items-center'>
+                            <Check size={16} />
+                            <span className='text-base'>In-app assets included</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export const PlanCardWhite = () => {
+    return (
+        <>
+            <div className='p-5 flex flex-col gap-5 card-plan-bgc-reverse rounded-xl'>
+                <div className='plan-header flex flex-col gap-5  font-proxima-normal'>
+                    <span className='text-sm font-bold'>Standalone</span>
+                    <h3 className='font-proxima font-display4-h3'>Enterprise</h3>
+                    <p className='font-normal text-sm card-plan-txt-reverse'>
+                        Perfect for teams or companies aiming to integrate 3D fashion into digital platforms.
+                    </p>
+                </div>
+                <ButtonBlack label='Contact Sales' />
+                <div className='plan-detail flex flex-col gap-4 font-proxima-normal'>
+                    <div>
+                        <h4 className='text-sm card-plan-txt-reverse'>User Count</h4>
+                        <div className='flex flex-start gap-2 items-center'>
+                            <Check size={16} />
+                            <span className='text-base'>Single user</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 className='text-sm card-plan-txt-reverse'>Management</h4>
+                        <div className='flex flex-start gap-2 items-center'>
+                            <Check size={16} />
+                            <span className='text-base'>End user management</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 className='text-sm card-plan-txt-reverse'>Consulting</h4>
+                        <div className='flex flex-start gap-2 items-center'>
+                            <Check size={16} />
+                            <span className='text-base'>Support for building a digital team</span>
+                        </div>
+                        <div className='flex flex-start gap-2 items-center'>
+                            <Check size={16} />
+                            <span className='text-base'>Share techniques and expertise</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 className='text-sm card-plan-txt-reverse'>Training</h4>
+                        <div className='flex flex-start gap-2 items-center'>
+                            <Check size={16} />
+                            <span className='text-base'>Online Manuals and Tutorials</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 className='text-sm card-plan-txt-reverse'>User Count</h4>
+                        <div className='flex flex-start gap-2 items-center'>
+                            <Check size={16} />
+                            <span className='text-base'>In-app assets included</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 };
 
