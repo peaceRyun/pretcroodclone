@@ -36,12 +36,7 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
             timelineRef.current.kill();
         }
 
-        timelineRef.current = gsap.timeline({
-            onComplete: () => {
-                gsap.set(textWrapRef.current, { clearProps: 'all' });
-                gsap.set(textContentRef.current, { clearProps: 'all' });
-            },
-        });
+        timelineRef.current = gsap.timeline();
 
         timelineRef.current
             .to(cardRef.current, {
@@ -91,12 +86,7 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
             timelineRef.current.kill();
         }
 
-        timelineRef.current = gsap.timeline({
-            onComplete: () => {
-                gsap.set(textWrapRef.current, { height: 0, opacity: 0 });
-                gsap.set(textContentRef.current, { yPercent: 50, opacity: 0 });
-            },
-        });
+        timelineRef.current = gsap.timeline();
 
         timelineRef.current
             .to(cardRef.current, {

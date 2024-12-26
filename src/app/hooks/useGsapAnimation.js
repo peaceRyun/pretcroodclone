@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { TALK_SECTION_DATA } from '../data/texts';
+import './gsapInit';
 
 export const useHomeAnimation = () => {
     const pinRef = useRef(null);
@@ -11,10 +12,6 @@ export const useHomeAnimation = () => {
     const imageContainerRef = useRef(null);
 
     useEffect(() => {
-        if (!gsap.plugins?.ScrollTrigger) {
-            gsap.registerPlugin(ScrollTrigger);
-        }
-
         const timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: pinRef.current,
@@ -55,10 +52,6 @@ export const useTalkSectionAnimation = () => {
     const isInitializedRef = useRef(false);
 
     useEffect(() => {
-        if (!gsap.plugins?.ScrollTrigger) {
-            gsap.registerPlugin(ScrollTrigger);
-        }
-
         if (isInitializedRef.current) return;
         isInitializedRef.current = true;
 
