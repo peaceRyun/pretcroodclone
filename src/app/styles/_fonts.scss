@@ -245,3 +245,19 @@ a {
 .fs-13-12 {
     font-size: clamp(12px, 1.6vw, 13px);
 }
+
+//opacity
+.c-o-40 {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+// copyright
+.copyright {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--Gray__90);
+    font-weight: 700;
+    white-space: none;
+}
