@@ -16,10 +16,10 @@ export const ButtonWhite = ({ label }) => {
     );
 };
 
-export const ButtonBlack = ({ label }) => {
+export const ButtonBlack = ({ label, type }) => {
     return (
         <>
-            <button className='btn black1 font-btn !font-normal font-proxima-normal'>{label}</button>
+            <button className={`btn black1 ${type} font-btn !font-normal font-proxima-normal`}>{label}</button>
         </>
     );
 };

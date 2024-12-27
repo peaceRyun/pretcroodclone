@@ -73,6 +73,9 @@ body {
 .bgc-g10 {
     background-color: var(--Gray__10);
 }
+.bgc-p {
+    background-color: var(--Green__primary);
+}
 
 // custom-color
 .color-g90 {
@@ -132,6 +135,13 @@ body {
         &:hover {
             background: var(--Green__primary);
         }
+    }
+    &.fit1 {
+        width: fit-content;
+        padding: 0 clamp(40px, 5.333vw, 60px);
+        height: clamp(48px, 6.4vw, 68px);
+        font-size: clamp(16px, 2.133vw, 20px);
+        line-height: clamp(48px, 6.4vw, 68px);
     }
 }
 
