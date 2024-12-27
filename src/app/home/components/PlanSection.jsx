@@ -7,7 +7,7 @@ const PlanSection = () => {
             <section className='layout-plan-wrap'>
                 <div className='flex flex-col'>
                     <p className='font-proxima font-display3-h2 text-white uppercase mx-auto'>select a plan</p>
-                    <div className='layout-plan mt-10 p-5 flex flex-col gap-5 lg:flex-row'>
+                    <div className='layout-plan mt-10 p-5 flex flex-col gap-5 lg:flex-row lg:mx-auto'>
                         <PlanCard />
                         <PlanCardWhite category='Standalone' />
                         <PlanCardWhite category='Float' />

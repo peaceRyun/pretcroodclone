@@ -14,7 +14,7 @@ const HelpSection = () => {
                         <Image src='/images/component/logo_only.svg' width={63} height={60} alt='로고 이미지 ' />
                     </div>
                 </marquee>
-                <div className='contact-wrap flex flex-col gap-10 px-5 justify-center md:flex-row'>
+                <div className='contact-wrap flex flex-col gap-10 px-5 justify-center mt-[80px] md:flex-row'>
                     <div className='discord flex flex-col gap-2 p-5 items-center contact-radius bgc-g90'>
                         <DiscordIcon className='text-white' />
                         <h3 className='font-proxima text-white text-center font-bold fs-40-28'>Discord</h3>
