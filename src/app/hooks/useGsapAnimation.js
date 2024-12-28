@@ -9,7 +9,7 @@ export const useHomeAnimation = () => {
     const pinRef = useRef(null);
     const section1Ref = useRef(null);
     const section2Ref = useRef(null);
-    const imageContainerRef = useRef(null);
+    const mediaContainerRef = useRef(null);
 
     useEffect(() => {
         const timeline = gsap.timeline({
@@ -25,12 +25,12 @@ export const useHomeAnimation = () => {
 
         timeline
             .fromTo(section2Ref.current, { y: '80vh' }, { y: '0', ease: 'none', duration: 2 })
-            .to(imageContainerRef.current, {
+            .to(mediaContainerRef.current, {
                 scale: 1.0,
                 duration: 1.5,
                 ease: 'none',
             })
-            .to(imageContainerRef.current, {
+            .to(mediaContainerRef.current, {
                 scale: 1.2,
                 duration: 4,
                 ease: 'expo.out',
@@ -41,7 +41,7 @@ export const useHomeAnimation = () => {
         };
     }, []);
 
-    return { pinRef, section1Ref, section2Ref, imageContainerRef };
+    return { pinRef, section1Ref, section2Ref, mediaContainerRef };
 };
 
 export const useTalkSectionAnimation = () => {

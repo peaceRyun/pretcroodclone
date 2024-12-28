@@ -13,7 +13,7 @@ import PlanSection from './components/PlanSection';
 import HelpSection from './components/HelpSection';
 
 const Home = () => {
-    const { pinRef, section1Ref, section2Ref, imageContainerRef } = useHomeAnimation();
+    const { pinRef, section1Ref, section2Ref, mediaContainerRef } = useHomeAnimation();
     return (
         <>
             <Header />
@@ -31,16 +31,13 @@ const Home = () => {
                     </section>
                     <section ref={section2Ref} className='sec2 w-full h-screen absolute top-0 z-10 overflow-hidden'>
                         <div
-                            ref={imageContainerRef}
+                            ref={mediaContainerRef}
                             className='rounded-2xl overflow-hidden w-full mx-auto aspect-video fullHeight scale-90'
                         >
-                            <Image
-                                src='/images/pattern/home/testsection1.jpg'
-                                alt='#'
-                                width={2000}
-                                height={2000}
-                                className='w-[1920px] h-[1080px] object-cover'
-                            />
+                            <video autoPlay muted loop playsInline className='w-[1920px] h-[1080px] object-cover'>
+                                <source src='/images/pattern/home/intro-demo-v.mp4' type='video/mp4' />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </section>
                 </div>
