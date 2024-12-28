@@ -35,7 +35,7 @@
     --gray-80: #1d1d1d;
     --gray-90: #111111;
 
-    --hdHeight: 80px;
+    --hdHeight: 5rem;
     --vh: 1vh; //intro 영상 사이즈 관련
 }
 
@@ -101,18 +101,18 @@ body {
 }
 
 .contact-radius {
-    border-radius: clamp(2px, 20vw, 220px);
+    border-radius: clamp(0.125rem, 20vw, 13.75rem);
 }
 
 .contact-icon-size {
-    width: clamp(60px, 8vw, 100px);
-    height: clamp(60px, 8vw, 100px);
+    width: clamp(3.75rem, 8vw, 6.25rem);
+    height: clamp(3.75rem, 8vw, 6.25rem);
 }
 
 .btn {
-    padding: 20px 80px;
-    border-radius: 100px;
-    height: clamp(48px, 6.4vw, 72px);
+    padding: 1.25rem 5rem;
+    border-radius: 6.25rem;
+    height: clamp(3rem, 6.4vw, 4.5rem);
     transition: all 0.3s;
     &.black1 {
         background: var(--Gray__90);
@@ -138,10 +138,10 @@ body {
     }
     &.fit1 {
         width: fit-content;
-        padding: 0 clamp(40px, 5.333vw, 60px);
-        height: clamp(48px, 6.4vw, 68px);
-        font-size: clamp(16px, 2.133vw, 20px);
-        line-height: clamp(48px, 6.4vw, 68px);
+        padding: 0 clamp(2.5rem, 5.333vw, 3.75rem);
+        height: clamp(3rem, 6.4vw, 4.25rem);
+        font-size: clamp(1rem, 2.133vw, 1.25rem);
+        line-height: clamp(3rem, 6.4vw, 4.25rem);
     }
 }
 
@@ -150,20 +150,68 @@ body {
 }
 
 .fullHeight-h {
-    min-height: calc(var(--vh, 1vh) * 100 - 80px); //intro 영상 사이즈 관련
+    min-height: calc(var(--vh, 1vh) * 100 - 5rem); //intro 영상 사이즈 관련
 }
 
 .cont {
-    width: clamp(240px, 89vw, 1480px);
+    width: clamp(15rem, 89vw, 92.5rem);
     height: 100%;
     margin: 0 auto;
 }
 
 .layout-plan {
-    max-width: 1600px;
-    margin: clamp(40px, 8.127vw, 100px) 0 0;
+    max-width: 100rem;
+    margin: clamp(2.5rem, 8.127vw, 6.25rem) 0 0;
 }
 
 .layout-plan-wrap {
-    padding: clamp(90px, 6.5vw, 120px) 0;
+    padding: clamp(5.625rem, 6.5vw, 7.5rem) 0;
+}
+
+.header-inner {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.header-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+}
+
+#header {
+    .logo-p,
+    .logo-r,
+    .logo-e,
+    .logo-t,
+    .logo-c,
+    .logo-o,
+    .logo-o2,
+    .logo-r2,
+    .logo-d {
+        fill: var(--Gray__30);
+    }
+}
+
+.header-left {
+    nav > ul > li > a > span {
+        font-family: 'proxima-nova', sans-serif;
+        color: var(--Gray__30);
+        font-size: 1.058rem;
+    }
+}
+
+.floating-menu {
+    ul > li > a > span {
+        font-family: 'proxima-nova', sans-serif;
+        color: var(--Gray__30);
+        font-size: 0.946rem;
+    }
 }
