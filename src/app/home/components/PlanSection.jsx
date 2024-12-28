@@ -5,7 +5,7 @@ import React from 'react';
 const PlanSection = () => {
     const { sectionRef, titleRef, addToCardsRef } = usePlanSectionAnimation();
 
-    return (
+    return (ㄴㄴㄴㄴ
         <section ref={sectionRef} className='layout-plan-wrap'>
             <div className='flex flex-col'>
                 <p ref={titleRef} className='font-proxima font-display3-h2 text-white uppercase mx-auto'>
