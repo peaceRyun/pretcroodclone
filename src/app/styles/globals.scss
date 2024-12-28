@@ -168,25 +168,8 @@ body {
     padding: clamp(5.625rem, 6.5vw, 7.5rem) 0;
 }
 
-.header-inner {
-    position: relative;
-    margin: 0 auto;
-    padding: 0 1.25rem;
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-}
-
-.header-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-}
-
-#header {
+header {
+    width: 100%;
     .logo-p,
     .logo-r,
     .logo-e,
@@ -198,20 +181,60 @@ body {
     .logo-d {
         fill: var(--Gray__30);
     }
-}
+    .header-inner {
+        height: inherit;
+        position: relative;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header-center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+    }
+    .header-right {
+        > button {
+            font-weight: 700 !important;
+            font-size: 0.95rem;
+            padding: 0 20px;
+            line-height: 36px;
+            height: auto;
+        }
+    }
 
-.header-left {
-    nav > ul > li > a > span {
-        font-family: 'proxima-nova', sans-serif;
-        color: var(--Gray__30);
-        font-size: 1.058rem;
+    .header-left {
+        nav > ul > li > a > span {
+            font-family: 'proxima-nova', sans-serif;
+            color: var(--Gray__30);
+            font-size: 1.058rem;
+        }
+    }
+
+    .floating-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: -22px;
+        width: fit-content;
+        padding: 10px 0;
+        border-radius: 12px;
+        z-index: 2;
+        ul > li > a > span {
+            font-family: 'proxima-nova', sans-serif;
+            color: var(--Gray__30);
+            font-size: 0.946rem;
+        }
     }
 }
 
-.floating-menu {
-    ul > li > a > span {
-        font-family: 'proxima-nova', sans-serif;
-        color: var(--Gray__30);
-        font-size: 0.946rem;
-    }
+.header-logo {
+    display: block;
+    width: clamp(162px, 18.824vw, 315px);
+    fill: var(--Gray__10);
 }

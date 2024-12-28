@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
+import { ButtonWhite } from '../../button/Button';
 import { HeaderLogo } from '../../logo/Logo';
 
 const Header = () => {
     return (
         <>
-            <header className='fixed top-0 z-50'>
+            <header className='fixed top-0 z-50 h-24'>
                 <div className='header-inner'>
                     <div className='header-center'>
                         <Link href='/'>
@@ -80,6 +81,9 @@ const Header = () => {
                                 </li>
                             </ul>
                         </nav>
+                    </div>
+                    <div className='header-right'>
+                        <ButtonWhite label='DOWNLOAD' />
                     </div>
                 </div>
             </header>
