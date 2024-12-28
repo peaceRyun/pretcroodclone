@@ -5,13 +5,25 @@ import Link from 'next/link';
 import React from 'react';
 
 const HelpSection = () => {
+    const numbers = [1, 2, 3, 4, 5, 6, 7];
+
     return (
         <>
             <section className='pb-[18.75vw]'>
-                <marquee behavior='scroll' direction='left'>
+                <marquee behavior='scroll' direction='left' scrollamount='10'>
                     <div className='flex gap-4'>
-                        <span className='font-proxima fs-160-80 text-white font-bold'>NEED MORE HELP?</span>
-                        <Image src='/images/component/logo_only.svg' width={63} height={60} alt='로고 이미지 ' />
+                        {numbers.map((number) => (
+                            <div key={number} className='flex gap-4 mx-8'>
+                                <span className='font-proxima fs-160-80 text-white font-bold'>NEED MORE HELP?</span>
+                                <Image
+                                    src='/images/component/logo_only.svg'
+                                    width={63}
+                                    height={60}
+                                    alt='로고 이미지'
+                                    className='w-16 h-16 my-auto mx-10'
+                                />
+                            </div>
+                        ))}
                     </div>
                 </marquee>
                 <div className='contact-wrap flex flex-col gap-10 px-5 justify-center mt-[80px] md:flex-row'>

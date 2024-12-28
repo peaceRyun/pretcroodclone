@@ -21,6 +21,7 @@ const SlideSection = () => {
                                     src={`/images/pattern/home/slidesection/card_image_${num}.png`}
                                     alt={`card${num}`}
                                     fill
+                                    sizes='(max-width: 768px) 384px, 512px'
                                     className='object-cover'
                                     priority={num === 1}
                                 />
