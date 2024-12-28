@@ -208,6 +208,91 @@ export const useSlideAnimation = () => {
     return { sectionRef, slidesRef };
 };
 
+export const usePlanSectionAnimation = () => {
+    const sectionRef = useRef(null);
+    const titleRef = useRef(null);
+    const cardsRef = useRef([]);
+    const timelineRef = useRef(null);
+    const isInitializedRef = useRef(false);
+
+    useEffect(() => {
+        if (isInitializedRef.current) return;
+        isInitializedRef.current = true;
+
+        const cleanupTriggers = () => {
+            if (timelineRef.current) {
+                timelineRef.current.kill();
+                timelineRef.current = null;
+            }
+            ScrollTrigger.getAll()
+                .filter((trigger) => trigger.vars.trigger === sectionRef.current)
+                .forEach((trigger) => trigger.kill());
+        };
+
+        const initAnimation = () => {
+            if (!sectionRef.current || !titleRef.current || cardsRef.current.length === 0) return;
+
+            // 초기 상태 설정
+            gsap.set(titleRef.current, {
+                opacity: 0,
+                yPercent: 100,
+            });
+
+            gsap.set(cardsRef.current, {
+                opacity: 0,
+                yPercent: 100,
+            });
+
+            timelineRef.current = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top center',
+                    end: '+=100%',
+                    pin: false,
+                    scrub: false,
+                },
+            });
+
+            // 타이틀 애니메이션
+            timelineRef.current
+                .to(titleRef.current, {
+                    opacity: 1,
+                    yPercent: 0,
+                    duration: 0.7,
+                    ease: 'power2.out',
+                })
+                // 카드 애니메이션
+                .to(
+                    cardsRef.current,
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.7,
+                        stagger: 0.15,
+                        ease: 'power2.out',
+                    },
+                    '-=0.4'
+                ); // 타이틀 애니메이션이 끝나기 0.4초 전에 시작
+        };
+
+        const timeoutId = setTimeout(initAnimation, 100);
+
+        return () => {
+            clearTimeout(timeoutId);
+            cleanupTriggers();
+            isInitializedRef.current = false;
+        };
+    }, []);
+
+    const addToCardsRef = (el) => {
+        if (el && !cardsRef.current.includes(el)) {
+            cardsRef.current = [...cardsRef.current.filter(Boolean), el];
+        }
+    };
+
+    return { sectionRef, titleRef, addToCardsRef };
+};
+
 export const useFooterLogoAnimation = () => {
     const logoRef = useRef(null);
     const timelineRef = useRef(null);

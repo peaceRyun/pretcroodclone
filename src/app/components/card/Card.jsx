@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, forwardRef } from 'react';
 import gsap from 'gsap';
 import { ButtonBlack, ButtonWhite } from '../button/Button';
 import { Check } from 'lucide-react';
@@ -150,10 +150,10 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
     );
 };
 
-export const PlanCard = () => {
+export const PlanCard = forwardRef((props, ref) => {
     return (
         <>
-            <div className='p-5 flex flex-col gap-5 bgc-g60 rounded-xl'>
+            <div ref={ref} className='p-5 flex flex-col gap-5 bgc-g60 rounded-xl'>
                 <div className='plan-header flex flex-col gap-5 text-white font-proxima-normal'>
                     <span className='text-sm font-bold'>Standalone</span>
                     <h3 className='font-proxima font-display4-h3'>Individual</h3>
@@ -188,7 +188,7 @@ export const PlanCard = () => {
             </div>
         </>
     );
-};
+});
 
 export const PlanCardWhite = ({ category }) => {
     return (
