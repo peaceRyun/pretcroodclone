@@ -207,3 +207,73 @@ export const useSlideAnimation = () => {
 
     return { sectionRef, slidesRef };
 };
+
+export const useFooterLogoAnimation = () => {
+    const logoRef = useRef(null);
+    const timelineRef = useRef(null);
+    const isInitializedRef = useRef(false);
+
+    useEffect(() => {
+        if (isInitializedRef.current) return;
+        isInitializedRef.current = true;
+
+        const cleanupTriggers = () => {
+            if (timelineRef.current) {
+                timelineRef.current.kill();
+                timelineRef.current = null;
+            }
+            ScrollTrigger.getAll()
+                .filter((trigger) => trigger.vars.trigger === logoRef.current)
+                .forEach((trigger) => trigger.kill());
+        };
+
+        const initAnimation = () => {
+            if (!logoRef.current) return;
+
+            const logoElements = [
+                '.logo-p',
+                '.logo-r',
+                '.logo-e',
+                '.logo-t',
+                '.logo-c',
+                '.logo-o',
+                '.logo-o2',
+                '.logo-r2',
+                '.logo-d',
+            ];
+
+            const logoOpt = {
+                trigger: logoRef.current,
+                start: 'top 50%',
+            };
+
+            timelineRef.current = gsap.timeline({
+                scrollTrigger: logoOpt,
+            });
+
+            // Animate each letter with increasing delay
+            logoElements.forEach((element, index) => {
+                timelineRef.current.from(
+                    logoRef.current.querySelector(element),
+                    {
+                        duration: 0.6 + index * 0.2,
+                        opacity: 1,
+                        yPercent: 102 + index * 10,
+                        ease: 'power3.out',
+                    },
+                    index * 0.1
+                );
+            });
+        };
+
+        const timeoutId = setTimeout(initAnimation, 100);
+
+        return () => {
+            clearTimeout(timeoutId);
+            cleanupTriggers();
+            isInitializedRef.current = false;
+        };
+    }, []);
+
+    return { logoRef };
+};
