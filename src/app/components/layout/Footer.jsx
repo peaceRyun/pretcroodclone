@@ -4,17 +4,18 @@ import Link from 'next/link';
 import { DiscordIconS, EmailIconS, InstagramIcon, NotionIcon } from '../icons/Icons';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
+import FooterLogo from '../logo/Logo';
 
 const Footer = () => {
     return (
         <>
-            <footer className='relative pt-[80px] pb-[60px] bgc-p'>
-                <div className='px-5'>PRETCOORD</div>
-                <div className='px-5 mt-8 flex flex-col gap-8 font-proxima-normal'>
+            <footer className='relative pt-[180px] px-[20px] pb-[120px] bgc-p transition-all'>
+                <FooterLogo />
+                <div className='mt-8 flex flex-col gap-8 font-proxima-normal lg:flex-row lg:justify-between'>
                     <Link href='#'>
                         <ButtonBlack label='Start for Free' type='fit1' />
                     </Link>
-                    <div className='flex flex-col gap-8 w-[244px] md:w-fit'>
+                    <div className='flex flex-col gap-8 w-[244px] md:w-fit lg:mt-6 lg:pr-14 lg:gap-14'>
                         <div className='footer-menu flex gap-7 flex-wrap gap text-sm'>
                             <p>Privacy Policy</p>
                             <p>·</p>
@@ -68,7 +69,7 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className='sns-links flex gap-5 justify-center'>
+                        <div className='sns-links flex gap-5 justify-center lg:justify-start lg:gap-10'>
                             <Image src='/images/component/ico_youtube.svg' width={24} height={24} alt='youtube' />
                             <InstagramIcon />
                             <Image src='/images/component/ico_linkedin.svg' width={24} height={24} alt='linkedin' />
@@ -78,7 +79,9 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <p className='font-proxima-normal copyright fs-16-14'>© 2023-2024 GIANTSTEP All rights reserved.</p>
+                <p className='font-proxima-normal copyright fs-16-14 lg:text-left lg:-mt-[28px]'>
+                    © 2023-2024 GIANTSTEP All rights reserved.
+                </p>
             </footer>
         </>
     );
