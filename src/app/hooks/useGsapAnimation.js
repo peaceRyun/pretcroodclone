@@ -152,11 +152,11 @@ export const useSlideAnimation = () => {
     const sectionRef = useRef(null); // 전체 섹션을 위한 ref 추가
     const slidesRef = useRef(null);
     const timelineRef = useRef(null);
+    const isInitializedRef = useRef(false);
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            gsap.registerPlugin(ScrollTrigger);
-        }
+        if (isInitializedRef.current) return;
+        isInitializedRef.current = true;
 
         const cleanupTriggers = () => {
             if (timelineRef.current) {
@@ -202,6 +202,7 @@ export const useSlideAnimation = () => {
         return () => {
             clearTimeout(initTimeout);
             cleanupTriggers();
+            isInitializedRef.current = false;
         };
     }, []);
 
