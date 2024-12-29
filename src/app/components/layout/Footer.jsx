@@ -93,12 +93,102 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className='sns-links flex gap-5 justify-center lg:justify-start lg:gap-10'>
-                            <Image src='/images/component/ico_youtube.svg' width={24} height={24} alt='youtube' />
-                            <InstagramIcon />
-                            <Image src='/images/component/ico_linkedin.svg' width={24} height={24} alt='linkedin' />
-                            <Image src='/images/component/ico_notion.svg' width={24} height={24} alt='notion' />
-                            <Image src='/images/component/ico_discord_s.svg' width={24} height={24} alt='discord_s' />
-                            <Image src='/images/component/ico_email_s.svg' width={24} height={24} alt='email_s' />
+                            <Link href='/' className='group'>
+                                <Image
+                                    src='/images/component/ico_youtube.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='youtube'
+                                    className='group-hover:hidden transition-opacity duration-3000 opacity-100 group-hover:opacity-0'
+                                />
+                                <Image
+                                    src='/images/component/ico_youtube_w.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='youtube'
+                                    className='hidden group-hover:block transition-opacity duration-3000 opacity-0 group-hover:opacity-100'
+                                />
+                            </Link>
+                            <Link href='/' className='group'>
+                                <Image
+                                    src='/images/component/ico_insta.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='insta'
+                                    className='group-hover:hidden transition-opacity duration-3000 opacity-100 group-hover:opacity-0'
+                                />
+                                <Image
+                                    src='/images/component/ico_insta_w.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='insta'
+                                    className='hidden group-hover:block transition-opacity duration-3000 opacity-0 group-hover:opacity-100'
+                                />
+                            </Link>
+                            <Link href='/' className='group'>
+                                <Image
+                                    src='/images/component/ico_linkedin.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='linkedin'
+                                    className='group-hover:hidden transition-opacity duration-3000 opacity-100 group-hover:opacity-0'
+                                />
+                                <Image
+                                    src='/images/component/ico_linkedin_w.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='linkedin'
+                                    className='hidden group-hover:block transition-opacity duration-3000 opacity-0 group-hover:opacity-100'
+                                />
+                            </Link>
+                            <Link href='/' className='group'>
+                                <Image
+                                    src='/images/component/ico_notion.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='notion'
+                                    className='group-hover:hidden transition-opacity duration-3000 opacity-100 group-hover:opacity-0'
+                                />
+                                <Image
+                                    src='/images/component/ico_notion_w.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='notion'
+                                    className='hidden group-hover:block transition-opacity duration-3000 opacity-0 group-hover:opacity-100'
+                                />
+                            </Link>
+                            <Link href='/' className='group'>
+                                <Image
+                                    src='/images/component/ico_discord_s.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='discord_s'
+                                    className='group-hover:hidden transition-opacity duration-3000 opacity-100 group-hover:opacity-0'
+                                />
+                                <Image
+                                    src='/images/component/ico_discord_s_w.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='discord_s'
+                                    className='hidden group-hover:block transition-opacity duration-3000 opacity-0 group-hover:opacity-100'
+                                />
+                            </Link>
+                            <Link href='/' className='group'>
+                                <Image
+                                    src='/images/component/ico_email_s.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='email_s'
+                                    className='group-hover:hidden transition-opacity duration-3000 opacity-100 group-hover:opacity-0'
+                                />
+                                <Image
+                                    src='/images/component/ico_email_s_w.svg'
+                                    width={24}
+                                    height={24}
+                                    alt='email_s'
+                                    className='hidden group-hover:block transition-opacity duration-3000 opacity-0 group-hover:opacity-100'
+                                />
+                            </Link>
                         </div>
                     </div>
                 </div>
