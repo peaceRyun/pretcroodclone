@@ -41,6 +41,11 @@
         background-color: white;
         transition: width 0.3s ease;
     }
+    &.black {
+        &::after {
+            background-color: black;
+        }
+    }
     &:hover::after {
         width: 100%;
     }

@@ -17,30 +17,44 @@ const Footer = () => {
                     </Link>
                     <div className='flex flex-col gap-8 w-[244px] md:w-fit lg:mt-6 lg:pr-14 lg:gap-14'>
                         <div className='footer-menu flex gap-7 flex-wrap gap text-sm'>
-                            <p>Privacy Policy</p>
+                            <Link href='/'>
+                                <p className='hover-line black'>Privacy Policy</p>
+                            </Link>
                             <p>·</p>
-                            <p>Terms of Use</p>
+                            <Link href='/'>
+                                <p className='hover-line black'>Terms of Use</p>
+                            </Link>
                         </div>
                         <div className='sitemap flex flex-col'>
                             <ul className='flex gap-x-5 gap-y-10 flex-wrap w-[234px] md:w-fit'>
                                 <li className='flex flex-col gap-4 w-[90px]'>
                                     <span className='text-xs c-o-40'>Product</span>
                                     <ul className='flex flex-col gap-3 text-sm'>
-                                        <li>Feature</li>
-                                        <li>What's New?</li>
+                                        <li>
+                                            <Link href='/' className='hover-line black'>
+                                                Feature
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href='/' className='hover-line black'>
+                                                What's New?
+                                            </Link>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li className='flex flex-col gap-4 w-[90px]'>
                                     <span className='text-xs c-o-40'>Learn</span>
                                     <ul className='flex flex-col gap-3 text-sm'>
                                         <li>
-                                            <Link href='#' className='flex gap-1'>
-                                                Tutorial <ArrowUpRight size={20} />
+                                            <Link href='#' className='flex gap-1 '>
+                                                <span className='hover-line black'>Tutorial</span>
+                                                <ArrowUpRight size={20} />
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href='#' className='flex gap-1'>
-                                                Manual <ArrowUpRight size={20} />
+                                                <span className='hover-line black'>Manual</span>
+                                                <ArrowUpRight size={20} />
                                             </Link>
                                         </li>
                                     </ul>
@@ -50,10 +64,14 @@ const Footer = () => {
                                     <ul className='flex flex-col gap-3 text-sm'>
                                         <li>
                                             <Link href='#' className='flex gap-1'>
-                                                FAQ <ArrowUpRight size={20} />
+                                                <span className='hover-line black'>FAQ</span> <ArrowUpRight size={20} />
                                             </Link>
                                         </li>
-                                        <li>Contact Us</li>
+                                        <li>
+                                            <Link href='/' className='hover-line black'>
+                                                Contact Us
+                                            </Link>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li className='flex flex-col gap-4 w-[90px]'>
@@ -61,10 +79,15 @@ const Footer = () => {
                                     <ul className='flex flex-col gap-3 text-sm'>
                                         <li>
                                             <Link href='#' className='flex gap-1'>
-                                                Collection <ArrowUpRight size={20} />
+                                                <span className='hover-line black'>Collection</span>
+                                                <ArrowUpRight size={20} />
                                             </Link>
                                         </li>
-                                        <li>Download</li>
+                                        <li>
+                                            <Link href='/' className='hover-line black'>
+                                                Download
+                                            </Link>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
