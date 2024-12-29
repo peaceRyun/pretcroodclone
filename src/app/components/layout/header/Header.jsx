@@ -1,10 +1,27 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { ButtonWhite } from '../../button/Button';
 import { HeaderLogo } from '../../logo/Logo';
-import { ArrowUpRight, Asterisk, BookOpen, ChevronDown, MessageSquareText, Pencil, Send, Zap } from 'lucide-react';
+import {
+    ArrowUpRight,
+    Asterisk,
+    BookOpen,
+    ChevronDown,
+    Menu,
+    MessageSquareText,
+    Pencil,
+    Send,
+    X,
+    Zap,
+} from 'lucide-react';
 
 const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleClick = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <>
             <header className='fixed top-0 z-50 h-24'>
@@ -15,7 +32,7 @@ const Header = () => {
                             <span className='sr-only'>PRETCOORD</span>
                         </Link>
                     </div>
-                    <div className='header-left'>
+                    <div className='header-left hidden lg:block'>
                         <nav>
                             <ul className='flex gap-4'>
                                 <li className='menu-item relative py-3'>
@@ -144,7 +161,10 @@ const Header = () => {
                         </nav>
                     </div>
                     <div className='header-right'>
-                        <ButtonWhite label='DOWNLOAD' />
+                        <button onClick={handleClick} className='!p-0'>
+                            {isOpen ? <X size={28} className='color-g10' /> : <Menu size={28} className='color-g10' />}
+                        </button>
+                        <ButtonWhite label='DOWNLOAD' className='hidden lg:block' />
                     </div>
                 </div>
             </header>

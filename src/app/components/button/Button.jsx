@@ -8,10 +8,10 @@ const Button = ({ label }) => {
     );
 };
 
-export const ButtonWhite = ({ label }) => {
+export const ButtonWhite = ({ label, className }) => {
     return (
         <>
-            <button className='btn white1 font-btn !font-normal font-proxima-normal'>{label}</button>
+            <button className={`btn white1 font-btn !font-normal font-proxima-normal ${className}`}>{label}</button>
         </>
     );
 };

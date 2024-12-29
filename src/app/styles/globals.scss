@@ -186,18 +186,25 @@ header {
         height: inherit;
         position: relative;
         margin: 0 auto;
-        padding: 0 2.5rem;
+        padding: 0 1.25rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (min-width: 1024px) {
+            padding: 0 2.5rem;
+        }
     }
     .header-center {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
         display: flex;
         align-items: center;
+
+        @media (min-width: 1024px) {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
     .header-right {
         > button {
