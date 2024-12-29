@@ -217,6 +217,14 @@ header {
         }
     }
 
+    .menu-item {
+        &:hover {
+            .floating-menu {
+                display: block;
+            }
+        }
+    }
+
     .floating-menu {
         display: none;
         position: absolute;
@@ -228,7 +236,6 @@ header {
         z-index: 2;
         ul > li > a > span {
             font-family: 'proxima-nova', sans-serif;
-            color: var(--Gray__30);
             font-size: 0.946rem;
         }
     }
