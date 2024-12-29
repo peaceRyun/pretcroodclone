@@ -45,3 +45,15 @@
         width: 100%;
     }
 }
+
+/* 기본 커서 */
+.custom-cursor {
+    cursor: url('/images/component/cursor-black.png'), auto;
+}
+
+/* 클릭 가능한 특정 요소들에 대한 hover 효과 */
+.custom-cursor a:hover,
+.custom-cursor button:hover,
+.custom-cursor input[type='submit']:hover {
+    cursor: url('/images/component/cursor-black-click.png'), pointer;
+}

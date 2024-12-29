@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
             </head>
             <body>
                 <SkipNav />
-                <div id='wrap' className='relative min-h-screen bgc-g80'>
+                <div id='wrap' className='relative min-h-screen bgc-g80 custom-cursor'>
                     {children}
                 </div>
             </body>

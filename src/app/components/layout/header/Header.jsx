@@ -161,7 +161,7 @@ const Header = () => {
                         </nav>
                     </div>
                     <div className='header-right'>
-                        <button onClick={handleClick} className='!p-0'>
+                        <button onClick={handleClick} className='!p-0 lg:hidden'>
                             {isOpen ? <X size={28} className='color-g10' /> : <Menu size={28} className='color-g10' />}
                         </button>
                         <ButtonWhite label='DOWNLOAD' className='hidden lg:block' />
