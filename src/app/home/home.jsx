@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../components/layout/header/Header';
 import Footer from '../components/layout/Footer';
 import Main from '../components/layout/main';
@@ -14,6 +14,15 @@ import HelpSection from './components/HelpSection';
 
 const Home = () => {
     const { pinRef, section1Ref, section2Ref, mediaContainerRef } = useHomeAnimation();
+    useEffect(() => {
+        // 페이지 진입시 smooth scroll 설정
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // 페이지 이탈시 기본값으로 복원
+        return () => {
+            document.documentElement.style.scrollBehavior = 'auto';
+        };
+    }, []);
     return (
         <>
             <Header />
