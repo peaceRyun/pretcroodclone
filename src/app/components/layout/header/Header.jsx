@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { ButtonWhite } from '../../button/Button';
 import { HeaderLogo } from '../../logo/Logo';
+import { ArrowUpRight, ChevronDown } from 'lucide-react';
 
 const Header = () => {
     return (
@@ -18,8 +19,9 @@ const Header = () => {
                         <nav>
                             <ul className='flex gap-4'>
                                 <li>
-                                    <Link href='/'>
+                                    <Link href='/' className='flex items-center gap-1 group'>
                                         <span>Product</span>
+                                        <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
                                     <div className='floating-menu bgc-o-90'>
                                         <ul className='flex flex-col gap-4'>
@@ -37,8 +39,9 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li>
-                                    <Link href='/'>
+                                    <Link href='/' className='flex items-center gap-1 group'>
                                         <span>Learn</span>
+                                        <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
                                     <div className='floating-menu bgc-o-90'>
                                         <ul className='flex flex-col gap-4'>
@@ -56,8 +59,9 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li>
-                                    <Link href='/'>
-                                        <span>Product</span>
+                                    <Link href='/' className='flex items-center gap-1 group'>
+                                        <span>Support</span>
+                                        <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
                                     <div className='floating-menu bgc-o-90'>
                                         <ul className='flex flex-col gap-4'>
@@ -75,8 +79,9 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li>
-                                    <Link href='/'>
-                                        <span>Collection</span>
+                                    <Link href='/' className='flex items-center gap-1'>
+                                        <span className='hover-line'>Collection</span>
+                                        <ArrowUpRight color='white' size={20} />
                                     </Link>
                                 </li>
                             </ul>

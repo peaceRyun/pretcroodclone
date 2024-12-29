@@ -4,6 +4,7 @@
 
 @import 'reset';
 @import 'fonts';
+@import 'animate';
 
 :root {
     --background: #ffffff;
@@ -185,7 +186,7 @@ header {
         height: inherit;
         position: relative;
         margin: 0 auto;
-        padding: 0 1.25rem;
+        padding: 0 2.5rem;
         display: flex;
         justify-content: space-between;
         align-items: center;

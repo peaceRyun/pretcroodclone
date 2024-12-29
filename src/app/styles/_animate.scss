@@ -1,0 +1,47 @@
+//header 애니메이션 관련
+@keyframes rotateLeft {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-180deg);
+    }
+}
+
+@keyframes rotateRight {
+    from {
+        transform: rotate(-180deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.chevron-rotate {
+    transform: rotate(0deg);
+}
+
+.group:hover .chevron-rotate {
+    animation: rotateLeft 0.3s ease forwards;
+}
+
+.group:not(:hover) .chevron-rotate {
+    animation: rotateRight 0.3s ease forwards;
+}
+
+.hover-line {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: white;
+        transition: width 0.3s ease;
+    }
+    &:hover::after {
+        width: 100%;
+    }
+}
