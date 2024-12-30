@@ -224,7 +224,7 @@ const Header = () => {
                                 </li>
                                 <li>
                                     <Link href='/' className='flex justify-between color-g10'>
-                                        <span className='!text-xl font-bold'>Collection</span>
+                                        <span className='!text-xl font-bold hover-line'>Collection</span>
                                         <ArrowUpRight />
                                     </Link>
                                 </li>
