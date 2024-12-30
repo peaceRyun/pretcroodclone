@@ -32,9 +32,9 @@ const Header = () => {
                             <span className='sr-only'>PRETCOORD</span>
                         </Link>
                     </div>
-                    <div className='header-left hidden lg:block'>
+                    <div className='header-left '>
                         <nav>
-                            <ul className='flex gap-4'>
+                            <ul className='gap-4 hidden lg:flex'>
                                 <li className='menu-item relative py-3'>
                                     <Link href='/' className='flex items-center gap-1 group'>
                                         <span>Product</span>
@@ -158,11 +158,18 @@ const Header = () => {
                                     </Link>
                                 </li>
                             </ul>
+                            <ul className='gnb-tabletless flex flex-col p-6 gap-5 lg:hidden'>
+                                <li></li>
+                            </ul>
                         </nav>
                     </div>
                     <div className='header-right'>
                         <button onClick={handleClick} className='!p-0 lg:hidden'>
-                            {isOpen ? <X size={28} className='color-g10' /> : <Menu size={28} className='color-g10' />}
+                            {isOpen ? (
+                                <X size={28} className='color-g10 relative z-50' />
+                            ) : (
+                                <Menu size={28} className='color-g10' />
+                            )}
                         </button>
                         <ButtonWhite label='DOWNLOAD' className='hidden lg:block' />
                     </div>
