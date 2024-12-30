@@ -21,11 +21,11 @@
     transform: rotate(0deg);
 }
 
-.group:hover .chevron-rotate {
+.menu-group:hover .chevron-rotate {
     animation: rotateLeft 0.3s ease forwards;
 }
 
-.group:not(:hover) .chevron-rotate {
+.menu-group:not(:hover) .chevron-rotate {
     animation: rotateRight 0.3s ease forwards;
 }
 

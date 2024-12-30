@@ -35,8 +35,8 @@ const Header = () => {
                     <div className='header-left '>
                         <nav className={`gnb-tabletless ${isOpen ? 'block' : 'hidden'} lg:block`}>
                             <ul className='gap-4 hidden lg:flex'>
-                                <li className='menu-item relative py-3'>
-                                    <Link href='/' className='flex items-center gap-1 group'>
+                                <li className='menu-item relative py-3 menu-group'>
+                                    <Link href='/' className='flex items-center gap-1 '>
                                         <span>Product</span>
                                         <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
@@ -70,8 +70,8 @@ const Header = () => {
                                         </ul>
                                     </div>
                                 </li>
-                                <li className='menu-item relative py-3'>
-                                    <Link href='/' className='flex items-center gap-1 group'>
+                                <li className='menu-item relative py-3 menu-group'>
+                                    <Link href='/' className='flex items-center gap-1'>
                                         <span>Learn</span>
                                         <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
@@ -114,8 +114,8 @@ const Header = () => {
                                         </ul>
                                     </div>
                                 </li>
-                                <li className='menu-item relative py-3'>
-                                    <Link href='/' className='flex items-center gap-1 group'>
+                                <li className='menu-item relative py-3 menu-group'>
+                                    <Link href='/' className='flex items-center gap-1'>
                                         <span>Support</span>
                                         <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
