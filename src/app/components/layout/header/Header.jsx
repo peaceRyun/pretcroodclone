@@ -160,58 +160,60 @@ const Header = () => {
                             </ul>
                             <ul className='flex flex-col p-6 gap-5 lg:hidden'>
                                 <li>
-                                    <Link href='/'>
+                                    <Link href='/' className='bbc-g60 block'>
                                         <span>Product</span>
-                                        <ul>
-                                            <li>
-                                                <Link href='/'>
-                                                    <span>Feature</span>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link href='/'>
-                                                    <span>What’s New?</span>
-                                                </Link>
-                                            </li>
-                                        </ul>
                                     </Link>
+                                    <ul>
+                                        <li>
+                                            <Link href='/'>
+                                                <span>Feature</span>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href='/'>
+                                                <span>What’s New?</span>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <Link href='/' className='bbc-g60 block'>
+                                        <span>Product</span>
+                                    </Link>
+                                    <ul>
+                                        <li>
+                                            <Link href='/'>
+                                                <span>Feature</span>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href='/'>
+                                                <span>What’s New?</span>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <Link href='/' className='bbc-g60 block'>
+                                        <span>Product</span>
+                                    </Link>
+                                    <ul>
+                                        <li>
+                                            <Link href='/'>
+                                                <span>Feature</span>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href='/'>
+                                                <span>What’s New?</span>
+                                            </Link>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <Link href='/'>
-                                        <span>Product</span>
-                                        <ul>
-                                            <li>
-                                                <Link href='/'>
-                                                    <span>Feature</span>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link href='/'>
-                                                    <span>What’s New?</span>
-                                                </Link>
-                                            </li>
-                                        </ul>
+                                        <span>Collection</span>
                                     </Link>
-                                </li>
-                                <li>
-                                    <Link href='/'>
-                                        <span>Product</span>
-                                        <ul>
-                                            <li>
-                                                <Link href='/'>
-                                                    <span>Feature</span>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link href='/'>
-                                                    <span>What’s New?</span>
-                                                </Link>
-                                            </li>
-                                        </ul>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <span>Collection</span>
                                 </li>
                             </ul>
                         </nav>

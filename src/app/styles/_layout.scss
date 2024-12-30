@@ -2,11 +2,97 @@
     @media (max-width: 1024px) {
         height: calc(100vh - 102px);
         position: fixed;
-        top: 80px;
+        top: 102px;
         right: 0;
-        bottom: 100px;
+        // bottom: 100px;
         width: 100%;
         padding: 0;
         overflow: auto;
+        background-color: black;
     }
+}
+
+header {
+    width: 100%;
+    .logo-p,
+    .logo-r,
+    .logo-e,
+    .logo-t,
+    .logo-c,
+    .logo-o,
+    .logo-o2,
+    .logo-r2,
+    .logo-d {
+        fill: var(--Gray__30);
+    }
+    .header-inner {
+        height: inherit;
+        position: relative;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (min-width: 1024px) {
+            padding: 0 2.5rem;
+        }
+    }
+    .header-center {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        @media (min-width: 1024px) {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .header-right {
+        > button {
+            font-weight: 700 !important;
+            font-size: 0.95rem;
+            padding: 0 20px;
+            line-height: 36px;
+            height: auto;
+        }
+    }
+
+    .header-left {
+        nav > ul > li > a > span {
+            font-family: 'proxima-nova', sans-serif;
+            color: var(--Gray__30);
+            font-size: 1.058rem;
+        }
+    }
+
+    .menu-item {
+        &:hover {
+            .floating-menu {
+                display: block;
+            }
+        }
+    }
+
+    .floating-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: -22px;
+        width: fit-content;
+        padding: 10px 0;
+        border-radius: 12px;
+        z-index: 2;
+        ul > li > a > span {
+            font-family: 'proxima-nova', sans-serif;
+            font-size: 0.946rem;
+        }
+    }
+}
+
+.header-logo {
+    display: block;
+    width: clamp(162px, 18.824vw, 315px);
+    fill: var(--Gray__10);
 }
