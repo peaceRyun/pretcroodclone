@@ -165,12 +165,12 @@ const Header = () => {
                                     </Link>
                                     <ul>
                                         <li>
-                                            <Link href='/'>
+                                            <Link href='/' className='block py-3 text-xl font-bold color-g10'>
                                                 <span>Feature</span>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='/'>
+                                            <Link href='/' className='block py-3 text-xl font-bold color-g10'>
                                                 <span>What’s New?</span>
                                             </Link>
                                         </li>
@@ -182,13 +182,21 @@ const Header = () => {
                                     </Link>
                                     <ul>
                                         <li>
-                                            <Link href='/'>
-                                                <span>Feature</span>
+                                            <Link
+                                                href='/'
+                                                className='py-3 text-xl font-bold color-g10 flex justify-between'
+                                            >
+                                                <span>Tutorial</span>
+                                                <ArrowUpRight />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='/'>
-                                                <span>What’s New?</span>
+                                            <Link
+                                                href='/'
+                                                className='py-3 text-xl font-bold color-g10 flex justify-between'
+                                            >
+                                                <span>Manual</span>
+                                                <ArrowUpRight />
                                             </Link>
                                         </li>
                                     </ul>
@@ -199,20 +207,25 @@ const Header = () => {
                                     </Link>
                                     <ul>
                                         <li>
-                                            <Link href='/'>
-                                                <span>Feature</span>
+                                            <Link
+                                                href='/'
+                                                className='flex justify-between py-3 text-xl font-bold color-g10'
+                                            >
+                                                <span>FAQ</span>
+                                                <ArrowUpRight />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='/'>
-                                                <span>What’s New?</span>
+                                            <Link href='/' className='block py-3 text-xl font-bold color-g10'>
+                                                <span>Contact Us</span>
                                             </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <Link href='/'>
-                                        <span className='!text-sm'>Collection</span>
+                                    <Link href='/' className='flex justify-between color-g10'>
+                                        <span className='!text-xl font-bold'>Collection</span>
+                                        <ArrowUpRight />
                                     </Link>
                                 </li>
                             </ul>
