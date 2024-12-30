@@ -34,7 +34,9 @@ const HelpSection = () => {
                             Quickly resolve your questions and share feature requests on Discord.
                         </p>
                         <Link href='#' className='flex gap-2 mt-[50px]'>
-                            <strong className='font-proxima-normal color-g10 fs-20-14 text-center'>Get Invited</strong>
+                            <strong className='font-proxima-normal color-g10 fs-20-14 text-center hover-line'>
+                                Get Invited
+                            </strong>
                             <ArrowRight color='gray' />
                         </Link>
                     </div>
@@ -45,7 +47,9 @@ const HelpSection = () => {
                             Get a demo or advice to integrate garment tech into your process.
                         </p>
                         <Link href='#' className='flex gap-2 mt-[50px]'>
-                            <strong className='font-proxima-normal color-g90 fs-20-14 text-center'>Contact Us</strong>
+                            <strong className='font-proxima-normal color-g90 fs-20-14 text-center hover-line black'>
+                                Contact Us
+                            </strong>
                             <ArrowRight color='black' />
                         </Link>
                     </div>
