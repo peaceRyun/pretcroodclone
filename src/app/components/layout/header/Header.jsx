@@ -33,7 +33,7 @@ const Header = () => {
                         </Link>
                     </div>
                     <div className='header-left '>
-                        <nav>
+                        <nav className='gnb-tabletless'>
                             <ul className='gap-4 hidden lg:flex'>
                                 <li className='menu-item relative py-3'>
                                     <Link href='/' className='flex items-center gap-1 group'>
@@ -158,8 +158,61 @@ const Header = () => {
                                     </Link>
                                 </li>
                             </ul>
-                            <ul className='gnb-tabletless flex flex-col p-6 gap-5 lg:hidden'>
-                                <li></li>
+                            <ul className='flex flex-col p-6 gap-5 lg:hidden'>
+                                <li>
+                                    <Link href='/'>
+                                        <span>Product</span>
+                                        <ul>
+                                            <li>
+                                                <Link href='/'>
+                                                    <span>Feature</span>
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href='/'>
+                                                    <span>What’s New?</span>
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href='/'>
+                                        <span>Product</span>
+                                        <ul>
+                                            <li>
+                                                <Link href='/'>
+                                                    <span>Feature</span>
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href='/'>
+                                                    <span>What’s New?</span>
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href='/'>
+                                        <span>Product</span>
+                                        <ul>
+                                            <li>
+                                                <Link href='/'>
+                                                    <span>Feature</span>
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href='/'>
+                                                    <span>What’s New?</span>
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <span>Collection</span>
+                                </li>
                             </ul>
                         </nav>
                     </div>
