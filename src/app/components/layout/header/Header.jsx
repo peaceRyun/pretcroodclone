@@ -34,7 +34,7 @@ const Header = () => {
                     </div>
                     <div className='header-left '>
                         <nav className={`gnb-tabletless ${isOpen ? 'block' : 'hidden'} lg:block`}>
-                            <ul className='gap-4 hidden lg:flex'>
+                            <ul className='gap-8 hidden lg:flex'>
                                 <li className='menu-item relative py-3 menu-group'>
                                     <Link href='/' className='flex items-center gap-1 '>
                                         <span>Product</span>
