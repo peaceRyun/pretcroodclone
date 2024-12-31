@@ -45,7 +45,7 @@ module.exports = {
     },
     plugins: [
         function ({ addUtilities }) {
-            const newUtilities = {
+            const responsiveFontSizes = {
                 '.fs-170-24': {
                     'font-size': 'clamp(24px, 9.767vw, 170px)',
                 },
@@ -146,7 +146,38 @@ module.exports = {
                     'font-size': 'clamp(12px, 1.6vw, 13px)',
                 },
             };
-            addUtilities(newUtilities);
+            const etcUtilies = {
+                '.fullHeight': {
+                    'min-height': 'calc(var(--vh, 1vh) * 100)',
+                },
+                '.fullHeight-h': {
+                    'min-height': 'calc(var(--vh, 1vh) * 100 - 5rem)',
+                },
+                '.cont': {
+                    width: 'clamp(15rem, 89vw, 92.5rem)',
+                    height: '100%',
+                    margin: '0 auto',
+                },
+                '.layout-plan': {
+                    'max-width': '100rem',
+                    margin: 'clamp(2.5rem, 8.127vw, 6.25rem) 0 0',
+                },
+                '.layout-plan-wrap': {
+                    padding: 'clamp(5.625rem, 6.5vw, 7.5rem) 0',
+                },
+                '.bbc-g60': {
+                    'border-bottom': '1px solid var(--Gray__60)',
+                },
+                '.contact-radius': {
+                    'border-radius': 'clamp(0.125rem, 20vw, 13.75rem)',
+                },
+                '.contact-icon-size': {
+                    width: 'clamp(3.75rem, 8vw, 6.25rem)',
+                    height: 'clamp(3.75rem, 8vw, 6.25rem)',
+                },
+            };
+            addUtilities(responsiveFontSizes);
+            addUtilities(etcUtilies);
         },
     ],
     darkMode: 'class', // or 'media' if you want to use media queries

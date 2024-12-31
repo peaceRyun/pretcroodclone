@@ -29,6 +29,7 @@
     animation: rotateRight 0.3s ease forwards;
 }
 
+// 복잡한 스타일링은 scss로
 .hover-line {
     position: relative;
     &::after {

@@ -168,8 +168,8 @@ const Header = () => {
                             </ul>
                             <ul className='flex flex-col px-6 gap-5 lg:hidden'>
                                 <li>
-                                    <Link href='/' className='py-2 bbc-g60 block'>
-                                        <span className='!text-sm'>Product</span>
+                                    <Link href='/' className='py-2 border-b border-gray-60 block'>
+                                        <span className='!text-sm !text-gray-50'>Product</span>
                                     </Link>
                                     <ul>
                                         <li>
@@ -185,8 +185,8 @@ const Header = () => {
                                     </ul>
                                 </li>
                                 <li>
-                                    <Link href='/' className='py-2 bbc-g60 block'>
-                                        <span className='!text-sm'>Learn</span>
+                                    <Link href='/' className='py-2 border-b border-gray-60 block'>
+                                        <span className='!text-sm !text-gray-50'>Learn</span>
                                     </Link>
                                     <ul>
                                         <li>
@@ -210,8 +210,8 @@ const Header = () => {
                                     </ul>
                                 </li>
                                 <li>
-                                    <Link href='/' className='py-2 bbc-g60 block'>
-                                        <span className='!text-sm'>Support</span>
+                                    <Link href='/' className='py-2 border-b border-gray-60 block'>
+                                        <span className='!text-sm !text-gray-50'>Support</span>
                                     </Link>
                                     <ul>
                                         <li>

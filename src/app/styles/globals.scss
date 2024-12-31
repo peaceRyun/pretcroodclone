@@ -40,19 +40,6 @@ body {
     background: var(--background);
 }
 
-.bbc-g60 {
-    border-bottom: 1px solid var(--Gray__60);
-}
-
-.contact-radius {
-    border-radius: clamp(0.125rem, 20vw, 13.75rem);
-}
-
-.contact-icon-size {
-    width: clamp(3.75rem, 8vw, 6.25rem);
-    height: clamp(3.75rem, 8vw, 6.25rem);
-}
-
 .btn {
     padding: 1.25rem 5rem;
     border-radius: 6.25rem;
@@ -87,27 +74,4 @@ body {
         font-size: clamp(1rem, 2.133vw, 1.25rem);
         line-height: clamp(3rem, 6.4vw, 4.25rem);
     }
-}
-
-.fullHeight {
-    min-height: calc(var(--vh, 1vh) * 100); //intro 영상 사이즈 관련
-}
-
-.fullHeight-h {
-    min-height: calc(var(--vh, 1vh) * 100 - 5rem); //intro 영상 사이즈 관련
-}
-
-.cont {
-    width: clamp(15rem, 89vw, 92.5rem);
-    height: 100%;
-    margin: 0 auto;
-}
-
-.layout-plan {
-    max-width: 100rem;
-    margin: clamp(2.5rem, 8.127vw, 6.25rem) 0 0;
-}
-
-.layout-plan-wrap {
-    padding: clamp(5.625rem, 6.5vw, 7.5rem) 0;
 }

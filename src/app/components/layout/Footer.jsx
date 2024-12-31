@@ -192,7 +192,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <p className='font-proxima-normal copyright fs-16-14 lg:text-left lg:-mt-[28px]'>
+                <p className='font-proxima-normal fs-16-14 mt-7 text-center !text-lg whitespace-nowrap leading-relaxed font-bold lg:text-left lg:-mt-7 '>
                     © 2023-2024 GIANTSTEP All rights reserved.
                 </p>
             </footer>
