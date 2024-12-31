@@ -7,7 +7,7 @@ const WithSection = () => {
     const sectionRef = useRef(null);
 
     return (
-        <div className='flex flex-col gap-20 py-24 px-3 bgc-g70'>
+        <div className='flex flex-col gap-20 py-24 px-3 bg-gray-70'>
             <h2 className='mx-auto uppercase font-proxima text-white font-display3-h2'>do it with us</h2>
             <ul ref={sectionRef} className='flex flex-col gap-3'>
                 {WITH_SECTION_DATA.map((item) => (

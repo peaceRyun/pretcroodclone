@@ -40,7 +40,7 @@ const Header = () => {
                                         <span>Product</span>
                                         <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
-                                    <div className='floating-menu bgc-o-90'>
+                                    <div className='floating-menu bg-black/90'>
                                         <ul className='flex flex-col'>
                                             <li>
                                                 <Link
@@ -78,7 +78,7 @@ const Header = () => {
                                         <span>Learn</span>
                                         <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
-                                    <div className='floating-menu bgc-o-90'>
+                                    <div className='floating-menu bg-black/90'>
                                         <ul className='flex flex-col'>
                                             <li>
                                                 <Link
@@ -124,7 +124,7 @@ const Header = () => {
                                         <span>Support</span>
                                         <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
-                                    <div className='floating-menu bgc-o-90'>
+                                    <div className='floating-menu bg-black/90'>
                                         <ul className='flex flex-col'>
                                             <li>
                                                 <Link

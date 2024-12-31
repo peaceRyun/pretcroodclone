@@ -153,7 +153,7 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
 export const PlanCard = forwardRef((props, ref) => {
     return (
         <>
-            <div ref={ref} className='p-5 flex flex-col gap-5 bgc-g60 rounded-xl'>
+            <div ref={ref} className='p-5 flex flex-col gap-5 bg-gray-60 rounded-xl'>
                 <div className='plan-header flex flex-col gap-5 text-white font-proxima-normal'>
                     <span className='text-sm font-bold'>Standalone</span>
                     <h3 className='font-proxima font-display4-h3'>Individual</h3>
@@ -193,7 +193,7 @@ export const PlanCard = forwardRef((props, ref) => {
 export const PlanCardWhite = ({ category }) => {
     return (
         <>
-            <div className='p-5 flex flex-col gap-5 bgc-g30 rounded-xl'>
+            <div className='p-5 flex flex-col gap-5 bg-gray-30 rounded-xl'>
                 <div className='plan-header flex flex-col gap-5  font-proxima-normal'>
                     <span className='text-sm font-bold'>{category}</span>
                     <h3 className='font-proxima font-display4-h3'>Enterprise</h3>
