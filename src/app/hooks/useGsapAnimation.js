@@ -370,7 +370,6 @@ export const useButtonPopupAnimation = () => {
     const buttonRef = useRef(null);
     const timelineRef = useRef(null);
     const scrollTimeoutRef = useRef(null);
-    const [isScrolling, setIsScrolling] = useState(false);
 
     const handleHoverAnimation = (isHovered) => {
         if (timelineRef.current) {
@@ -423,38 +422,54 @@ export const useButtonPopupAnimation = () => {
         });
     };
 
-    // 스크롤 감지 및 버튼 애니메이션 처리
     useEffect(() => {
         const handleScroll = () => {
-            // 스크롤 중임을 표시
-            setIsScrolling(true);
+            const scrollTop = window.scrollY;
 
-            // 버튼을 아래로 숨김
+            // 스크롤이 맨 위일 때
+            if (scrollTop < 100) {
+                gsap.to(buttonRef.current, {
+                    opacity: 0,
+                    y: '100px', // 아래로 숨김
+                    duration: 0.15,
+                    ease: 'power2.inOut',
+                });
+                return;
+            }
+
+            // 스크롤 중일 때도 아래로 숨김
             gsap.to(buttonRef.current, {
+                opacity: 1,
                 y: '100px',
                 duration: 0.15,
                 ease: 'power2.inOut',
             });
 
-            // 이전 타임아웃 제거
             if (scrollTimeoutRef.current) {
                 clearTimeout(scrollTimeoutRef.current);
             }
 
-            // 스크롤이 멈춘 후 500ms 후에 버튼을 다시 표시
+            // 스크롤이 멈추면 버튼을 위로 올림
             scrollTimeoutRef.current = setTimeout(() => {
-                setIsScrolling(false);
-                gsap.fromTo(
-                    buttonRef.current,
-                    { y: '100px' },
-                    {
-                        y: '0px',
-                        duration: 0.15,
-                        ease: 'power2.out',
-                    }
-                );
+                if (scrollTop >= 100) {
+                    gsap.fromTo(
+                        buttonRef.current,
+                        { y: '100px' },
+                        {
+                            y: '0px',
+                            duration: 0.15,
+                            ease: 'power2.out',
+                        }
+                    );
+                }
             }, 300);
         };
+
+        // 초기 상태 설정 - 아래에 숨겨진 상태로 시작
+        gsap.set(buttonRef.current, {
+            opacity: window.scrollY < 100 ? 0 : 1,
+            y: '100px',
+        });
 
         window.addEventListener('scroll', handleScroll);
 
@@ -475,7 +490,6 @@ export const useButtonPopupAnimation = () => {
         buttonRef,
         handleHoverAnimation,
         handleScrollToTop,
-        isScrolling,
     };
 };
 

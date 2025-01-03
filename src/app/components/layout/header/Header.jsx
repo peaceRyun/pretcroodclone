@@ -26,7 +26,7 @@ const Header = () => {
 
     return (
         <>
-            <header ref={headerRef} className={`fixed top-0 z-50 h-24 ${isOpen ? 'bg-black' : ''}`}>
+            <header ref={headerRef} className={`fixed top-0 z-40 h-24 ${isOpen ? 'bg-black' : ''}`}>
                 <div className='header-inner'>
                     <div className='header-center'>
                         <Link href='/'>

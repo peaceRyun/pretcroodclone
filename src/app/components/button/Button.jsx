@@ -47,4 +47,4 @@ export const ButtonPopup = () => {
     );
 };
 
-export default ButtonPopup;
+export default Button;

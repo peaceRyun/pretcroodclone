@@ -175,6 +175,10 @@ module.exports = {
                     width: 'clamp(3.75rem, 8vw, 6.25rem)',
                     height: 'clamp(3.75rem, 8vw, 6.25rem)',
                 },
+                '.intro-logo': {
+                    width: 'clamp(200px, 26.667vw, 380px)',
+                    fill: 'var(--Gray__10)',
+                },
             };
             addUtilities(responsiveFontSizes);
             addUtilities(etcUtilies);
