@@ -363,3 +363,72 @@ export const useFooterLogoAnimation = () => {
 
     return { logoRef };
 };
+
+export const useButtonPopupAnimation = () => {
+    const textRef = useRef(null);
+    const iconRef = useRef(null);
+    const timelineRef = useRef(null);
+
+    const handleHoverAnimation = (isHovered) => {
+        if (timelineRef.current) {
+            timelineRef.current.kill();
+        }
+
+        // 새로운 타임라인 생성
+        timelineRef.current = gsap.timeline();
+
+        if (isHovered) {
+            // Hover 시 애니메이션
+            timelineRef.current
+                .to(iconRef.current, {
+                    opacity: 0,
+                    duration: 0.15,
+                    ease: 'power2.inOut',
+                })
+                .to(
+                    textRef.current,
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.15,
+                        ease: 'power2.inOut',
+                    },
+                    '-=0.2'
+                ); // 동시에 시작
+        } else {
+            // Hover 해제 시 애니메이션
+            timelineRef.current
+                .to(textRef.current, {
+                    y: 40,
+                    opacity: 0,
+                    duration: 0.15,
+                    ease: 'power2.inOut',
+                })
+                .to(
+                    iconRef.current,
+                    {
+                        opacity: 1,
+                        duration: 0.15,
+                        ease: 'power2.inOut',
+                    },
+                    '-=0.2'
+                ); // 동시에 시작
+        }
+    };
+
+    useEffect(() => {
+        return () => {
+            if (timelineRef.current) {
+                timelineRef.current.kill();
+            }
+        };
+    }, []);
+
+    return {
+        textRef,
+        iconRef,
+        handleHoverAnimation,
+    };
+};
+
+export default useButtonPopupAnimation;

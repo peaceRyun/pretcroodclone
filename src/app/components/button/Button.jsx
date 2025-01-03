@@ -1,4 +1,6 @@
-import React from 'react';
+import { useButtonPopupAnimation } from '@/app/hooks/useGsapAnimation';
+import { ChevronUp } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const Button = ({ label }) => {
     return (
@@ -24,4 +26,23 @@ export const ButtonBlack = ({ label, type }) => {
     );
 };
 
-export default Button;
+export const ButtonPopup = () => {
+    const { textRef, iconRef, handleHoverAnimation } = useButtonPopupAnimation();
+
+    return (
+        <button
+            className='fixed bottom-10 right-5 p-0 m-0 flex justify-center items-center bg-gray-90 rounded-xl w-14 h-14 overflow-hidden hover:cursor-pointer'
+            onMouseEnter={() => handleHoverAnimation(true)}
+            onMouseLeave={() => handleHoverAnimation(false)}
+        >
+            <div className='absolute' ref={iconRef}>
+                <ChevronUp color='#2aea65' size={28} />
+            </div>
+            <div className='absolute text-primary opacity-0 translate-y-10' ref={textRef}>
+                TOP
+            </div>
+        </button>
+    );
+};
+
+export default ButtonPopup;

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Header from '../components/layout/header/Header';
 import Footer from '../components/layout/Footer';
 import Main from '../components/layout/main';
-import Button from '../components/button/Button';
+import Button, { ButtonPopup } from '../components/button/Button';
 import Image from 'next/image';
 import TalkSection from './components/TalkSection';
 import { useHomeAnimation } from '../hooks/useGsapAnimation';
@@ -56,6 +56,8 @@ const Home = () => {
                 <PlanSection />
                 <HelpSection />
             </Main>
+            {/* 팝업 */}
+            <ButtonPopup />
             <Footer />
         </>
     );
