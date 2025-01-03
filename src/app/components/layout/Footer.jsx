@@ -9,7 +9,7 @@ import FooterLogo from '../logo/Logo';
 const Footer = () => {
     return (
         <>
-            <footer className='relative pt-[180px] px-[20px] pb-[120px] bgc-p transition-all'>
+            <footer className='relative pt-[180px] px-[20px] pb-[120px] bg-primary transition-all'>
                 <FooterLogo />
                 <div className='mt-8 flex flex-col gap-8 font-proxima-normal lg:flex-row lg:justify-between'>
                     <Link href='#'>
@@ -28,7 +28,7 @@ const Footer = () => {
                         <div className='sitemap flex flex-col'>
                             <ul className='flex gap-x-5 gap-y-10 flex-wrap w-[234px] md:w-fit'>
                                 <li className='flex flex-col gap-4 w-[90px]'>
-                                    <span className='text-xs c-o-40'>Product</span>
+                                    <span className='text-xs text-black/40'>Product</span>
                                     <ul className='flex flex-col gap-3 text-sm'>
                                         <li>
                                             <Link href='/' className='hover-line black'>
@@ -43,7 +43,7 @@ const Footer = () => {
                                     </ul>
                                 </li>
                                 <li className='flex flex-col gap-4 w-[90px]'>
-                                    <span className='text-xs c-o-40'>Learn</span>
+                                    <span className='text-xs text-black/40'>Learn</span>
                                     <ul className='flex flex-col gap-3 text-sm'>
                                         <li>
                                             <Link href='#' className='flex gap-1 '>
@@ -60,7 +60,7 @@ const Footer = () => {
                                     </ul>
                                 </li>
                                 <li className='flex flex-col gap-4 w-[90px]'>
-                                    <span className='text-xs c-o-40'>Support</span>
+                                    <span className='text-xs text-black/40'>Support</span>
                                     <ul className='flex flex-col gap-3 text-sm'>
                                         <li>
                                             <Link href='#' className='flex gap-1'>
@@ -75,7 +75,7 @@ const Footer = () => {
                                     </ul>
                                 </li>
                                 <li className='flex flex-col gap-4 w-[90px]'>
-                                    <span className='text-xs c-o-40'>&nbsp;</span>
+                                    <span className='text-xs text-black/40'>&nbsp;</span>
                                     <ul className='flex flex-col gap-3 text-sm'>
                                         <li>
                                             <Link href='#' className='flex gap-1'>
@@ -192,7 +192,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <p className='font-proxima-normal copyright fs-16-14 lg:text-left lg:-mt-[28px]'>
+                <p className='font-proxima-normal fs-16-14 mt-7 text-center !text-lg whitespace-nowrap leading-relaxed font-bold lg:text-left lg:-mt-7 '>
                     © 2023-2024 GIANTSTEP All rights reserved.
                 </p>
             </footer>

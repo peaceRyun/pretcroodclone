@@ -14,9 +14,11 @@ import {
     X,
     Zap,
 } from 'lucide-react';
+import { useHeaderAnimation } from '@/app/hooks/useGsapAnimation';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { headerRef } = useHeaderAnimation();
 
     const handleClick = () => {
         setIsOpen(!isOpen);
@@ -24,7 +26,7 @@ const Header = () => {
 
     return (
         <>
-            <header className={`fixed top-0 z-50 h-24 ${isOpen ? 'bg-black' : ''}`}>
+            <header ref={headerRef} className={`fixed top-0 z-40 h-24 ${isOpen ? 'bg-black' : ''}`}>
                 <div className='header-inner'>
                     <div className='header-center'>
                         <Link href='/'>
@@ -40,7 +42,7 @@ const Header = () => {
                                         <span>Product</span>
                                         <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
-                                    <div className='floating-menu bgc-o-90'>
+                                    <div className='floating-menu bg-black/90'>
                                         <ul className='flex flex-col'>
                                             <li>
                                                 <Link
@@ -49,9 +51,9 @@ const Header = () => {
                                                 >
                                                     <Asterisk
                                                         size={17}
-                                                        className='color-g50 group-hover:text-[#2aea65]'
+                                                        className='text-gray-50 group-hover:text-[#2aea65]'
                                                     />
-                                                    <span className='color-g50 group-hover:text-[#2aea65]'>
+                                                    <span className='text-gray-50 group-hover:text-[#2aea65]'>
                                                         Feature
                                                     </span>
                                                 </Link>
@@ -61,8 +63,11 @@ const Header = () => {
                                                     href='/'
                                                     className='flex gap-2 px-5 items-center text-center whitespace-nowrap leading-10 group'
                                                 >
-                                                    <Zap size={17} className='color-g50 group-hover:text-[#2aea65]' />
-                                                    <span className='color-g50 group-hover:text-[#2aea65]'>
+                                                    <Zap
+                                                        size={17}
+                                                        className='text-gray-50 group-hover:text-[#2aea65]'
+                                                    />
+                                                    <span className='text-gray-50 group-hover:text-[#2aea65]'>
                                                         What' s New?
                                                     </span>
                                                 </Link>
@@ -75,7 +80,7 @@ const Header = () => {
                                         <span>Learn</span>
                                         <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
-                                    <div className='floating-menu bgc-o-90'>
+                                    <div className='floating-menu bg-black/90'>
                                         <ul className='flex flex-col'>
                                             <li>
                                                 <Link
@@ -84,14 +89,14 @@ const Header = () => {
                                                 >
                                                     <Pencil
                                                         size={17}
-                                                        className='color-g50 group-hover:text-[#2aea65]'
+                                                        className='text-gray-50 group-hover:text-[#2aea65]'
                                                     />
-                                                    <span className='color-g50 group-hover:text-[#2aea65]'>
+                                                    <span className='text-gray-50 group-hover:text-[#2aea65]'>
                                                         Tutorial
                                                     </span>
                                                     <ArrowUpRight
                                                         size={17}
-                                                        className='color-g50 group-hover:text-[#2aea65]'
+                                                        className='text-gray-50 group-hover:text-[#2aea65]'
                                                     />
                                                 </Link>
                                             </li>
@@ -102,12 +107,14 @@ const Header = () => {
                                                 >
                                                     <BookOpen
                                                         size={17}
-                                                        className='color-g50 group-hover:text-[#2aea65]'
+                                                        className='text-gray-50 group-hover:text-[#2aea65]'
                                                     />
-                                                    <span className='color-g50 group-hover:text-[#2aea65]'>Manual</span>
+                                                    <span className='text-gray-50 group-hover:text-[#2aea65]'>
+                                                        Manual
+                                                    </span>
                                                     <ArrowUpRight
                                                         size={17}
-                                                        className='color-g50 group-hover:text-[#2aea65]'
+                                                        className='text-gray-50 group-hover:text-[#2aea65]'
                                                     />
                                                 </Link>
                                             </li>
@@ -119,7 +126,7 @@ const Header = () => {
                                         <span>Support</span>
                                         <ChevronDown color='white' size={20} className='chevron-rotate' />
                                     </Link>
-                                    <div className='floating-menu bgc-o-90'>
+                                    <div className='floating-menu bg-black/90'>
                                         <ul className='flex flex-col'>
                                             <li>
                                                 <Link
@@ -128,12 +135,12 @@ const Header = () => {
                                                 >
                                                     <MessageSquareText
                                                         size={17}
-                                                        className='color-g50 group-hover:text-[#2aea65]'
+                                                        className='text-gray-50 group-hover:text-[#2aea65]'
                                                     />
-                                                    <span className='color-g50 group-hover:text-[#2aea65]'>FAQ</span>
+                                                    <span className='text-gray-50 group-hover:text-[#2aea65]'>FAQ</span>
                                                     <ArrowUpRight
                                                         size={17}
-                                                        className='color-g50 group-hover:text-[#2aea65]'
+                                                        className='text-gray-50 group-hover:text-[#2aea65]'
                                                     />
                                                 </Link>
                                             </li>
@@ -142,8 +149,11 @@ const Header = () => {
                                                     href='/'
                                                     className='flex gap-2 px-5 items-center text-center whitespace-nowrap leading-10 group'
                                                 >
-                                                    <Send size={17} className='color-g50 group-hover:text-[#2aea65]' />
-                                                    <span className='color-g50 group-hover:text-[#2aea65]'>
+                                                    <Send
+                                                        size={17}
+                                                        className='text-gray-50 group-hover:text-[#2aea65]'
+                                                    />
+                                                    <span className='text-gray-50 group-hover:text-[#2aea65]'>
                                                         Contact Us
                                                     </span>
                                                 </Link>
@@ -160,31 +170,31 @@ const Header = () => {
                             </ul>
                             <ul className='flex flex-col px-6 gap-5 lg:hidden'>
                                 <li>
-                                    <Link href='/' className='py-2 bbc-g60 block'>
-                                        <span className='!text-sm'>Product</span>
+                                    <Link href='/' className='py-2 border-b border-gray-60 block'>
+                                        <span className='!text-sm !text-gray-50'>Product</span>
                                     </Link>
                                     <ul>
                                         <li>
-                                            <Link href='/' className='block py-3 text-xl font-bold color-g10'>
+                                            <Link href='/' className='block py-3 text-xl font-bold text-gray-10'>
                                                 <span>Feature</span>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='/' className='block py-3 text-xl font-bold color-g10'>
+                                            <Link href='/' className='block py-3 text-xl font-bold text-gray-10'>
                                                 <span>What’s New?</span>
                                             </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <Link href='/' className='py-2 bbc-g60 block'>
-                                        <span className='!text-sm'>Learn</span>
+                                    <Link href='/' className='py-2 border-b border-gray-60 block'>
+                                        <span className='!text-sm !text-gray-50'>Learn</span>
                                     </Link>
                                     <ul>
                                         <li>
                                             <Link
                                                 href='/'
-                                                className='py-3 text-xl font-bold color-g10 flex justify-between'
+                                                className='py-3 text-xl font-bold text-gray-10 flex justify-between'
                                             >
                                                 <span>Tutorial</span>
                                                 <ArrowUpRight />
@@ -193,7 +203,7 @@ const Header = () => {
                                         <li>
                                             <Link
                                                 href='/'
-                                                className='py-3 text-xl font-bold color-g10 flex justify-between'
+                                                className='py-3 text-xl font-bold text-gray-10 flex justify-between'
                                             >
                                                 <span>Manual</span>
                                                 <ArrowUpRight />
@@ -202,28 +212,28 @@ const Header = () => {
                                     </ul>
                                 </li>
                                 <li>
-                                    <Link href='/' className='py-2 bbc-g60 block'>
-                                        <span className='!text-sm'>Support</span>
+                                    <Link href='/' className='py-2 border-b border-gray-60 block'>
+                                        <span className='!text-sm !text-gray-50'>Support</span>
                                     </Link>
                                     <ul>
                                         <li>
                                             <Link
                                                 href='/'
-                                                className='flex justify-between py-3 text-xl font-bold color-g10'
+                                                className='flex justify-between py-3 text-xl font-bold text-gray-10'
                                             >
                                                 <span>FAQ</span>
                                                 <ArrowUpRight />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='/' className='block py-3 text-xl font-bold color-g10'>
+                                            <Link href='/' className='block py-3 text-xl font-bold text-gray-10'>
                                                 <span>Contact Us</span>
                                             </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <Link href='/' className='flex justify-between color-g10'>
+                                    <Link href='/' className='flex justify-between text-gray-10'>
                                         <span className='!text-xl font-bold hover-line'>Collection</span>
                                         <ArrowUpRight />
                                     </Link>
@@ -234,9 +244,9 @@ const Header = () => {
                     <div className='header-right'>
                         <button onClick={handleClick} className='!p-0 lg:hidden'>
                             {isOpen ? (
-                                <X size={28} className='color-g10 relative z-50' />
+                                <X size={28} className='text-gray-10 relative z-50' />
                             ) : (
-                                <Menu size={28} className='color-g10' />
+                                <Menu size={28} className='text-gray-10' />
                             )}
                         </button>
                         <ButtonWhite label='DOWNLOAD' className='hidden lg:block' />

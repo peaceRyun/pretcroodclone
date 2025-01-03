@@ -153,32 +153,32 @@ const MiniCard = ({ subtitle, p, onMouseEnter, onMouseLeave }) => {
 export const PlanCard = forwardRef((props, ref) => {
     return (
         <>
-            <div ref={ref} className='p-5 flex flex-col gap-5 bgc-g60 rounded-xl'>
+            <div ref={ref} className='p-5 flex flex-col gap-5 bg-gray-60 rounded-xl'>
                 <div className='plan-header flex flex-col gap-5 text-white font-proxima-normal'>
                     <span className='text-sm font-bold'>Standalone</span>
                     <h3 className='font-proxima font-display4-h3'>Individual</h3>
-                    <p className='font-normal text-sm color-g30'>
+                    <p className='font-normal text-sm text-gray-30'>
                         Perfect for individuals or sole proprietors seeking to design and create 3D fashion.
                     </p>
                 </div>
                 <ButtonWhite label='Start for Free' />
                 <div className='plan-detail flex flex-col gap-4 text-white font-proxima-normal'>
                     <div>
-                        <h4 className='text-sm color-g30'>User Count</h4>
+                        <h4 className='text-sm text-gray-30'>User Count</h4>
                         <div className='flex flex-start gap-2 items-center'>
                             <Check size={16} />
                             <span className='text-base'>Single user</span>
                         </div>
                     </div>
                     <div>
-                        <h4 className='text-sm color-g30'>Training</h4>
+                        <h4 className='text-sm text-gray-30'>Training</h4>
                         <div className='flex flex-start gap-2 items-center'>
                             <Check size={16} />
                             <span className='text-base'>Online Manuals and Tutorials</span>
                         </div>
                     </div>
                     <div>
-                        <h4 className='text-sm color-g30'>User Count</h4>
+                        <h4 className='text-sm text-gray-30'>Assets</h4>
                         <div className='flex flex-start gap-2 items-center'>
                             <Check size={16} />
                             <span className='text-base'>In-app assets included</span>
@@ -193,32 +193,32 @@ export const PlanCard = forwardRef((props, ref) => {
 export const PlanCardWhite = ({ category }) => {
     return (
         <>
-            <div className='p-5 flex flex-col gap-5 bgc-g30 rounded-xl'>
+            <div className='p-5 flex flex-col gap-5 bg-gray-30 rounded-xl'>
                 <div className='plan-header flex flex-col gap-5  font-proxima-normal'>
                     <span className='text-sm font-bold'>{category}</span>
                     <h3 className='font-proxima font-display4-h3'>Enterprise</h3>
-                    <p className='font-normal text-sm color-g60'>
+                    <p className='font-normal text-sm text-gray-60'>
                         Perfect for teams or companies aiming to integrate 3D fashion into digital platforms.
                     </p>
                 </div>
                 <ButtonBlack label='Contact Sales' />
                 <div className='plan-detail flex flex-col gap-4 font-proxima-normal'>
                     <div>
-                        <h4 className='text-sm color-g60'>User Count</h4>
+                        <h4 className='text-sm text-gray-60'>User Count</h4>
                         <div className='flex flex-start gap-2 items-center'>
                             <Check size={16} />
                             <span className='text-base'>Single user</span>
                         </div>
                     </div>
                     <div>
-                        <h4 className='text-sm color-g60'>Management</h4>
+                        <h4 className='text-sm text-gray-60'>Management</h4>
                         <div className='flex flex-start gap-2 items-center'>
                             <Check size={16} />
                             <span className='text-base'>End user management</span>
                         </div>
                     </div>
                     <div>
-                        <h4 className='text-sm color-g60'>Consulting</h4>
+                        <h4 className='text-sm text-gray-60'>Consulting</h4>
                         <div className='flex flex-start gap-2 items-center'>
                             <Check size={16} />
                             <span className='text-base'>Support for building a digital team</span>
@@ -229,14 +229,14 @@ export const PlanCardWhite = ({ category }) => {
                         </div>
                     </div>
                     <div>
-                        <h4 className='text-sm color-g60'>Training</h4>
+                        <h4 className='text-sm text-gray-60'>Training</h4>
                         <div className='flex flex-start gap-2 items-center'>
                             <Check size={16} />
                             <span className='text-base'>Online Manuals and Tutorials</span>
                         </div>
                     </div>
                     <div>
-                        <h4 className='text-sm color-g60'>User Count</h4>
+                        <h4 className='text-sm text-gray-60'>User Count</h4>
                         <div className='flex flex-start gap-2 items-center'>
                             <Check size={16} />
                             <span className='text-base'>In-app assets included</span>

@@ -27,27 +27,27 @@ const HelpSection = () => {
                     </div>
                 </marquee>
                 <div className='contact-wrap flex flex-col gap-10 px-5 justify-center mt-[80px] md:flex-row'>
-                    <div className='discord flex flex-col gap-2 p-5 items-center contact-radius bgc-g90'>
+                    <div className='discord flex flex-col gap-2 p-5 items-center contact-radius bg-gray-90'>
                         <DiscordIcon className='text-white' />
                         <h3 className='font-proxima text-white text-center font-bold fs-40-28'>Discord</h3>
-                        <p className='font-proxima-normal color-g50 fs-20-16 text-center'>
+                        <p className='font-proxima-normal text-gray-50 fs-20-16 text-center'>
                             Quickly resolve your questions and share feature requests on Discord.
                         </p>
                         <Link href='#' className='flex gap-2 mt-[50px]'>
-                            <strong className='font-proxima-normal color-g10 fs-20-14 text-center hover-line'>
+                            <strong className='font-proxima-normal text-gray-10 fs-20-14 text-center hover-line'>
                                 Get Invited
                             </strong>
                             <ArrowRight color='gray' />
                         </Link>
                     </div>
-                    <div className='email flex flex-col gap-2 p-5 items-center bgc-g10 rounded-2xl'>
+                    <div className='email flex flex-col gap-2 p-5 items-center bg-gray-10 rounded-2xl'>
                         <EmailIcon />
-                        <h3 className='font-proxima text-center font-bold fs-40-28 color-g90'>help@pretcoord.com</h3>
-                        <p className='font-proxima-normal color-g50 fs-20-16 text-center'>
+                        <h3 className='font-proxima text-center font-bold fs-40-28 text-gray-90'>help@pretcoord.com</h3>
+                        <p className='font-proxima-normal text-gray-50 fs-20-16 text-center'>
                             Get a demo or advice to integrate garment tech into your process.
                         </p>
                         <Link href='#' className='flex gap-2 mt-[50px]'>
-                            <strong className='font-proxima-normal color-g90 fs-20-14 text-center hover-line black'>
+                            <strong className='font-proxima-normal text-gray-90 fs-20-14 text-center hover-line black'>
                                 Contact Us
                             </strong>
                             <ArrowRight color='black' />

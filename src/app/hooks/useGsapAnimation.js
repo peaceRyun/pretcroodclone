@@ -1,5 +1,5 @@
 // hooks/useGsapAnimation.js
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { TALK_SECTION_DATA } from '../data/texts';
@@ -363,3 +363,175 @@ export const useFooterLogoAnimation = () => {
 
     return { logoRef };
 };
+
+export const useButtonPopupAnimation = () => {
+    const textRef = useRef(null);
+    const iconRef = useRef(null);
+    const buttonRef = useRef(null);
+    const timelineRef = useRef(null);
+    const scrollTimeoutRef = useRef(null);
+
+    const handleHoverAnimation = (isHovered) => {
+        if (timelineRef.current) {
+            timelineRef.current.kill();
+        }
+
+        timelineRef.current = gsap.timeline();
+
+        if (isHovered) {
+            timelineRef.current
+                .to(iconRef.current, {
+                    opacity: 0,
+                    duration: 0.15,
+                    ease: 'power2.inOut',
+                })
+                .to(
+                    textRef.current,
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.15,
+                        ease: 'power2.inOut',
+                    },
+                    '-=0.2'
+                );
+        } else {
+            timelineRef.current
+                .to(textRef.current, {
+                    y: 40,
+                    opacity: 0,
+                    duration: 0.15,
+                    ease: 'power2.inOut',
+                })
+                .to(
+                    iconRef.current,
+                    {
+                        opacity: 1,
+                        duration: 0.15,
+                        ease: 'power2.inOut',
+                    },
+                    '-=0.2'
+                );
+        }
+    };
+
+    const handleScrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+
+            // 스크롤이 맨 위일 때
+            if (scrollTop < 100) {
+                gsap.to(buttonRef.current, {
+                    opacity: 0,
+                    y: '100px', // 아래로 숨김
+                    duration: 0.15,
+                    ease: 'power2.inOut',
+                });
+                return;
+            }
+
+            // 스크롤 중일 때도 아래로 숨김
+            gsap.to(buttonRef.current, {
+                opacity: 1,
+                y: '100px',
+                duration: 0.15,
+                ease: 'power2.inOut',
+            });
+
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+
+            // 스크롤이 멈추면 버튼을 위로 올림
+            scrollTimeoutRef.current = setTimeout(() => {
+                if (scrollTop >= 100) {
+                    gsap.fromTo(
+                        buttonRef.current,
+                        { y: '100px' },
+                        {
+                            y: '0px',
+                            duration: 0.15,
+                            ease: 'power2.out',
+                        }
+                    );
+                }
+            }, 300);
+        };
+
+        // 초기 상태 설정 - 아래에 숨겨진 상태로 시작
+        gsap.set(buttonRef.current, {
+            opacity: window.scrollY < 100 ? 0 : 1,
+            y: '100px',
+        });
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+            if (timelineRef.current) {
+                timelineRef.current.kill();
+            }
+        };
+    }, []);
+
+    return {
+        textRef,
+        iconRef,
+        buttonRef,
+        handleHoverAnimation,
+        handleScrollToTop,
+    };
+};
+
+export const useHeaderAnimation = () => {
+    const headerRef = useRef(null);
+    const scrollTimeoutRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // 스크롤 시작시 헤더를 위로 숨김
+            gsap.to(headerRef.current, {
+                y: '-100%',
+                duration: 0.15,
+                ease: 'power2.inOut',
+            });
+
+            // 이전 타임아웃 제거
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+
+            // 스크롤이 멈춘 후 500ms 후에 헤더를 다시 표시
+            scrollTimeoutRef.current = setTimeout(() => {
+                gsap.to(headerRef.current, {
+                    y: '0%',
+                    duration: 0.15,
+                    ease: 'power2.out',
+                });
+            }, 300);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+        };
+    }, []);
+
+    return { headerRef };
+};
+
+export default useButtonPopupAnimation;
