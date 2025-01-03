@@ -1,5 +1,5 @@
 // hooks/useGsapAnimation.js
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { TALK_SECTION_DATA } from '../data/texts';
@@ -367,18 +367,19 @@ export const useFooterLogoAnimation = () => {
 export const useButtonPopupAnimation = () => {
     const textRef = useRef(null);
     const iconRef = useRef(null);
+    const buttonRef = useRef(null);
     const timelineRef = useRef(null);
+    const scrollTimeoutRef = useRef(null);
+    const [isScrolling, setIsScrolling] = useState(false);
 
     const handleHoverAnimation = (isHovered) => {
         if (timelineRef.current) {
             timelineRef.current.kill();
         }
 
-        // 새로운 타임라인 생성
         timelineRef.current = gsap.timeline();
 
         if (isHovered) {
-            // Hover 시 애니메이션
             timelineRef.current
                 .to(iconRef.current, {
                     opacity: 0,
@@ -394,9 +395,8 @@ export const useButtonPopupAnimation = () => {
                         ease: 'power2.inOut',
                     },
                     '-=0.2'
-                ); // 동시에 시작
+                );
         } else {
-            // Hover 해제 시 애니메이션
             timelineRef.current
                 .to(textRef.current, {
                     y: 40,
@@ -412,12 +412,57 @@ export const useButtonPopupAnimation = () => {
                         ease: 'power2.inOut',
                     },
                     '-=0.2'
-                ); // 동시에 시작
+                );
         }
     };
 
+    const handleScrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
+    // 스크롤 감지 및 버튼 애니메이션 처리
     useEffect(() => {
+        const handleScroll = () => {
+            // 스크롤 중임을 표시
+            setIsScrolling(true);
+
+            // 버튼을 아래로 숨김
+            gsap.to(buttonRef.current, {
+                y: '100px',
+                duration: 0.15,
+                ease: 'power2.inOut',
+            });
+
+            // 이전 타임아웃 제거
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+
+            // 스크롤이 멈춘 후 500ms 후에 버튼을 다시 표시
+            scrollTimeoutRef.current = setTimeout(() => {
+                setIsScrolling(false);
+                gsap.fromTo(
+                    buttonRef.current,
+                    { y: '100px' },
+                    {
+                        y: '0px',
+                        duration: 0.15,
+                        ease: 'power2.out',
+                    }
+                );
+            }, 300);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
         return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
             if (timelineRef.current) {
                 timelineRef.current.kill();
             }
@@ -427,8 +472,52 @@ export const useButtonPopupAnimation = () => {
     return {
         textRef,
         iconRef,
+        buttonRef,
         handleHoverAnimation,
+        handleScrollToTop,
+        isScrolling,
     };
+};
+
+export const useHeaderAnimation = () => {
+    const headerRef = useRef(null);
+    const scrollTimeoutRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // 스크롤 시작시 헤더를 위로 숨김
+            gsap.to(headerRef.current, {
+                y: '-100%',
+                duration: 0.15,
+                ease: 'power2.inOut',
+            });
+
+            // 이전 타임아웃 제거
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+
+            // 스크롤이 멈춘 후 500ms 후에 헤더를 다시 표시
+            scrollTimeoutRef.current = setTimeout(() => {
+                gsap.to(headerRef.current, {
+                    y: '0%',
+                    duration: 0.15,
+                    ease: 'power2.out',
+                });
+            }, 300);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+        };
+    }, []);
+
+    return { headerRef };
 };
 
 export default useButtonPopupAnimation;

@@ -14,9 +14,11 @@ import {
     X,
     Zap,
 } from 'lucide-react';
+import { useHeaderAnimation } from '@/app/hooks/useGsapAnimation';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { headerRef } = useHeaderAnimation();
 
     const handleClick = () => {
         setIsOpen(!isOpen);
@@ -24,7 +26,7 @@ const Header = () => {
 
     return (
         <>
-            <header className={`fixed top-0 z-50 h-24 ${isOpen ? 'bg-black' : ''}`}>
+            <header ref={headerRef} className={`fixed top-0 z-50 h-24 ${isOpen ? 'bg-black' : ''}`}>
                 <div className='header-inner'>
                     <div className='header-center'>
                         <Link href='/'>

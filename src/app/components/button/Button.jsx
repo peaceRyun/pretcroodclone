@@ -27,13 +27,15 @@ export const ButtonBlack = ({ label, type }) => {
 };
 
 export const ButtonPopup = () => {
-    const { textRef, iconRef, handleHoverAnimation } = useButtonPopupAnimation();
+    const { textRef, iconRef, buttonRef, handleHoverAnimation, handleScrollToTop } = useButtonPopupAnimation();
 
     return (
         <button
-            className='fixed bottom-10 right-5 p-0 m-0 flex justify-center items-center bg-gray-90 rounded-xl w-14 h-14 overflow-hidden hover:cursor-pointer'
+            ref={buttonRef}
+            className='fixed bottom-10 right-5 p-0 m-0 flex justify-center items-center bg-gray-90 rounded-xl w-[56px] h-[56px] overflow-hidden hover:cursor-pointer'
             onMouseEnter={() => handleHoverAnimation(true)}
             onMouseLeave={() => handleHoverAnimation(false)}
+            onClick={handleScrollToTop}
         >
             <div className='absolute' ref={iconRef}>
                 <ChevronUp color='#2aea65' size={28} />
