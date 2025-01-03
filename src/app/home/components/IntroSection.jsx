@@ -7,7 +7,8 @@ const IntroSection = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [showText, setShowText] = useState(false);
     const [showLogo, setShowLogo] = useState(false);
-    const [slideOut, setSlideOut] = useState(false);
+    const [hideText, setHideText] = useState(false);
+    const [hideLogo, setHideLogo] = useState(false);
 
     useEffect(() => {
         // 텍스트 등장
@@ -15,30 +16,38 @@ const IntroSection = () => {
             setShowText(true);
         }, 100);
 
-        // 텍스트 등장 후 로고 등장
+        // 로고 등장
         const logoTimer = setTimeout(() => {
             setShowLogo(true);
-        }, 1100); // 텍스트 등장(100ms) + 텍스트 애니메이션(1000ms) 후
+        }, 1100);
 
-        // 퇴장 시작
-        const exitTimer = setTimeout(() => {
-            setSlideOut(true);
-        }, 2100);
+        // 텍스트 퇴장
+        const textExitTimer = setTimeout(() => {
+            setHideText(true);
+        }, 3000);
+
+        // 로고 퇴장
+        const logoExitTimer = setTimeout(() => {
+            setHideLogo(true);
+        }, 3300);
 
         // 컴포넌트 제거
         const removeTimer = setTimeout(() => {
             setIsVisible(false);
-        }, 3400);
+        }, 4500);
 
         return () => {
             clearTimeout(textTimer);
             clearTimeout(logoTimer);
-            clearTimeout(exitTimer);
+            clearTimeout(textExitTimer);
+            clearTimeout(logoExitTimer);
             clearTimeout(removeTimer);
         };
     }, []);
 
     if (!isVisible) return null;
+
+    const baseStyle = 'block transform transition-all duration-1000 ease-in-out';
 
     return (
         <section>
@@ -46,18 +55,18 @@ const IntroSection = () => {
                 <div className='space-y-4'>
                     <p className='overflow-hidden h-[1.2em]'>
                         <span
-                            className={`block transform transition-transform duration-1000 ease-in-out font-proxima
-                                ${showText ? 'translate-y-0' : 'translate-y-full'}
-                                ${slideOut ? '-translate-y-full' : ''}`}
+                            className={`${baseStyle} font-proxima
+                                ${!showText ? 'translate-y-full' : 'translate-y-0'}
+                                ${hideText ? '-translate-y-full' : ''}`}
                         >
                             HEY THERE,
                         </span>
                     </p>
                     <p className='overflow-hidden h-[1.2em]'>
                         <span
-                            className={`block transform transition-transform duration-1000 ease-in-out font-proxima
-                                ${showText ? 'translate-y-0' : 'translate-y-full'}
-                                ${slideOut ? '-translate-y-full' : ''}`}
+                            className={`${baseStyle} font-proxima
+                                ${!showText ? 'translate-y-full' : 'translate-y-0'}
+                                ${hideText ? '-translate-y-full' : ''}`}
                         >
                             BE EXCEPTIONAL WITH
                         </span>
@@ -65,9 +74,9 @@ const IntroSection = () => {
                 </div>
                 <div className='overflow-hidden'>
                     <div
-                        className={`block transform transition-transform duration-1000 ease-in-out
-                            ${showLogo ? 'translate-y-0' : 'translate-y-full'}
-                            ${slideOut ? '-translate-y-full delay-[300ms]' : ''}`}
+                        className={`${baseStyle}
+                            ${!showLogo ? 'translate-y-full' : 'translate-y-0'}
+                            ${hideLogo ? '-translate-y-full' : ''}`}
                     >
                         <IntroLogo />
                     </div>
