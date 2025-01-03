@@ -45,41 +45,37 @@ const IntroSection = () => {
         };
     }, []);
 
-    if (!isVisible) return null;
+    const baseStyle = 'block transition-all duration-1000 ease-in-out font-proxima';
 
-    const baseStyle = 'block transform transition-all duration-1000 ease-in-out';
+    // 텍스트 transform 스타일 생성
+    const getTextStyle = (show, hide) => ({
+        transform: hide ? 'translateY(-100%)' : !show ? 'translateY(100%)' : 'translateY(0)',
+    });
+
+    const sectionStyle = `
+        w-full min-h-screen flex flex-col justify-between fs-68-32 
+        bg-gray-90 text-gray-10 font-bold absolute z-50 py-20
+        transition-opacity duration-500
+        ${isVisible ? 'opacity-100' : 'opacity-0'}
+    `;
 
     return (
-        <section>
-            <div className='w-full min-h-screen flex flex-col justify-between fs-68-32 bg-gray-90 text-gray-10 font-bold absolute z-50 py-20'>
-                <div className='space-y-4'>
-                    <p className='overflow-hidden h-[1.2em]'>
-                        <span
-                            className={`${baseStyle} font-proxima
-                                ${!showText ? 'translate-y-full' : 'translate-y-0'}
-                                ${hideText ? '-translate-y-full' : ''}`}
-                        >
-                            HEY THERE,
-                        </span>
-                    </p>
-                    <p className='overflow-hidden h-[1.2em]'>
-                        <span
-                            className={`${baseStyle} font-proxima
-                                ${!showText ? 'translate-y-full' : 'translate-y-0'}
-                                ${hideText ? '-translate-y-full' : ''}`}
-                        >
-                            BE EXCEPTIONAL WITH
-                        </span>
-                    </p>
-                </div>
-                <div className='overflow-hidden'>
-                    <div
-                        className={`${baseStyle}
-                            ${!showLogo ? 'translate-y-full' : 'translate-y-0'}
-                            ${hideLogo ? '-translate-y-full' : ''}`}
-                    >
-                        <IntroLogo />
-                    </div>
+        <section className={sectionStyle}>
+            <div className='space-y-4'>
+                <p className='overflow-hidden h-[1.2em]'>
+                    <span className={baseStyle} style={getTextStyle(showText, hideText)}>
+                        HEY THERE,
+                    </span>
+                </p>
+                <p className='overflow-hidden h-[1.2em]'>
+                    <span className={baseStyle} style={getTextStyle(showText, hideText)}>
+                        BE EXCEPTIONAL WITH
+                    </span>
+                </p>
+            </div>
+            <div className='overflow-hidden'>
+                <div className={baseStyle} style={getTextStyle(showLogo, hideLogo)}>
+                    <IntroLogo />
                 </div>
             </div>
         </section>
