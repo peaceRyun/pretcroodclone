@@ -56,7 +56,7 @@ const IntroSection = () => {
         w-full min-h-screen flex flex-col justify-between fs-68-32 
         bg-gray-90 text-gray-10 font-bold absolute z-50 py-20
         transition-opacity duration-500
-        ${isVisible ? 'opacity-100' : 'opacity-0'}
+        ${isVisible ? 'opacity-100' : 'opacity-0 hidden'}
     `;
 
     return (
