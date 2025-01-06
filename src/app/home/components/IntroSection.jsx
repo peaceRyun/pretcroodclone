@@ -10,7 +10,31 @@ const IntroSection = () => {
     const [hideText, setHideText] = useState(false);
     const [hideLogo, setHideLogo] = useState(false);
 
+    // 스크롤 제어 함수들
+    // Next.js의 'use client' 컴포넌트에서는 document 객체에 직접 접근하면 hydration 문제가 발생할 수 있습니다. 이를 해결하기 위해 useEffect 내에서 document 접근 전에 window 객체가 있는지 확인하고, 별도의 lock/unlock 함수를 만들어보겠습니다.
+    const lockScroll = () => {
+        if (typeof window !== 'undefined') {
+            document.body.style.cssText = `
+                overflow: hidden;
+                position: fixed;
+                top: -${window.scrollY}px;
+                left: 0;
+                right: 0;
+            `;
+        }
+    };
+
+    const unlockScroll = () => {
+        if (typeof window !== 'undefined') {
+            const scrollY = document.body.style.top;
+            document.body.style.cssText = '';
+            window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+        }
+    };
+
     useEffect(() => {
+        lockScroll(); // 컴포넌트 마운트 시 스크롤 잠금
+
         // 텍스트 등장
         const textTimer = setTimeout(() => {
             setShowText(true);
@@ -34,9 +58,11 @@ const IntroSection = () => {
         // 컴포넌트 제거
         const removeTimer = setTimeout(() => {
             setIsVisible(false);
+            unlockScroll(); // 컴포넌트 제거 시 스크롤 해제
         }, 4500);
 
         return () => {
+            unlockScroll(); // cleanup 시 스크롤 해제
             clearTimeout(textTimer);
             clearTimeout(logoTimer);
             clearTimeout(textExitTimer);
